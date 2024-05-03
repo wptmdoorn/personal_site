@@ -1,0 +1,538 @@
+{
+    "basic_info": {},
+    "about": {},
+    "co_authors": [],
+    "publications": [
+        {
+            "title": "The laboratory parameters-derived CoLab score as an indicator of the host response in ICU COVID-19 patients decreases over time: a prospective cohort study",
+            "date_published": "Apr 2024",
+            "authors": [
+                "Tom Schoenmakers",
+                "Mathie P G Leers",
+                "Stefan H.M. Gorissen",
+                "Andrea Peeters"
+            ],
+            "publication_type": "Article",
+            "description": "The CoLab score was developed and externally validated to rule out COVID-19 among suspected patients presenting at the emergency department. We hypothesized a within-patient decrease in the CoLab score over time in an intensive care unit (ICU) cohort. Such a decrease would create the opportunity to potentially rule out the need for isolation when t...",
+            "publication_link": "https://www.researchgate.net/publication/379667684_The_laboratory_parameters-derived_CoLab_score_as_an_indicator_of_the_host_response_in_ICU_COVID-19_patients_decreases_over_time_a_prospective_cohort_study"
+        },
+        {
+            "title": "Machine learning for risk stratification in the emergency department (MARS-ED) study protocol for a randomized controlled pilot trial on the implementation of a prediction model based on machine learning technology predicting 31-day mortality in the emergency department",
+            "date_published": "Jan 2024",
+            "authors": [
+                "Paul M.E.L. van Dam",
+                "William van Doorn",
+                "Floor van Gils",
+                "Patricia M Stassen"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nMany prediction models have been developed to help identify emergency department (ED) patients at high risk of poor outcome. However, these models often underperform in clinical practice and their actual clinical impact has hardly ever been evaluated. We aim to perform a clinical trial to investigate the clinical impact of a prediction m...",
+            "publication_link": "https://www.researchgate.net/publication/377643179_Machine_learning_for_risk_stratification_in_the_emergency_department_MARS-ED_study_protocol_for_a_randomized_controlled_pilot_trial_on_the_implementation_of_a_prediction_model_based_on_machine_learnin"
+        },
+        {
+            "title": "Deep embedded clustering generalisability and adaptation for integrating mixed datatypes: two critical care cohorts",
+            "date_published": "Jan 2024",
+            "authors": [
+                "Jip de Kok",
+                "Frank van Rosmalen",
+                "Jacqueline Koeze",
+                "Bas C. T. van Bussel"
+            ],
+            "publication_type": "Article",
+            "description": "We validated a Deep Embedded Clustering (DEC) model and its adaptation for integrating mixed datatypes (in this study, numerical and categorical variables). Deep Embedded Clustering (DEC) is a promising technique capable of managing extensive sets of variables and non-linear relationships. Nevertheless, DEC cannot adequately handle mixed datatypes....",
+            "publication_link": "https://www.researchgate.net/publication/377304385_Deep_embedded_clustering_generalisability_and_adaptation_for_integrating_mixed_datatypes_two_critical_care_cohorts"
+        },
+        {
+            "title": "The diurnal variation of Alzheimer\u2019s disease plasma biomarkers: a 25h study with hourly sampling",
+            "date_published": "Dec 2023",
+            "authors": [
+                "Wagner S. Brum",
+                "William van Doorn",
+                "Eduardo R. Zimmer",
+                "Kaj Blennow"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nNovel plasma biomarkers can accurately reflect key pathological features of Alzheimer\u2019s disease (AD). To ensure their safe clinical implementation in the near future, determining whether they present a diurnal rhythm is a key pending task in the field. This would help to elucidate whether the time of day in which blood samples are collec...",
+            "publication_link": "https://www.researchgate.net/publication/376813801_The_diurnal_variation_of_Alzheimer's_disease_plasma_biomarkers_a_25h_study_with_hourly_sampling"
+        },
+        {
+            "title": "Explainable Machine Learning Models for Rapid Risk Stratification in the Emergency Department: A Multicenter Study",
+            "date_published": "Dec 2023",
+            "authors": [
+                "William van Doorn",
+                "Floris Helmich",
+                "Paul M E L van Dam",
+                "Steven J R Meex"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nRisk stratification of patients presenting to the emergency department (ED) is important for appropriate triage. Diagnostic laboratory tests are an essential part of the workup and risk stratification of these patients. Using machine learning, the prognostic power and clinical value of these tests can be amplified greatly. In this study,...",
+            "publication_link": "https://www.researchgate.net/publication/376598575_Explainable_Machine_Learning_Models_for_Rapid_Risk_Stratification_in_the_Emergency_Department_A_Multicenter_Study"
+        },
+        {
+            "title": "Head-to-head comparison of 19 prediction models for short-term outcome in medical patients in the emergency department: a retrospective study",
+            "date_published": "Dec 2023",
+            "authors": [
+                "Paul M. E. L. van Dam",
+                "Sien Lievens",
+                "Noortje Zelis",
+                "Patricia M Stassen"
+            ],
+            "publication_type": "Article",
+            "description": "Introduction\nPrediction models for identifying emergency department (ED) patients at high risk of poor outcome are often not externally validated. We aimed to perform a head-to-head comparison of the discriminatory performance of several prediction models in a large cohort of ED patients.\n\nMethods\nIn this retrospective study, we selected prediction...",
+            "publication_link": "https://www.researchgate.net/publication/376359197_Head-to-head_comparison_of_19_prediction_models_for_short-term_outcome_in_medical_patients_in_the_emergency_department_a_retrospective_study"
+        },
+        {
+            "title": "Evaluation of Innovative Laboratory Tests to Predict a Thrombotic Phenotype in a Family with Dysfibrinogenemia and a Novel FGG Mutation",
+            "date_published": "Nov 2023",
+            "authors": [
+                "Amaury Monard",
+                "Floor Moenen",
+                "Elisabetta Castoldi",
+                "Yvonne Henskens"
+            ],
+            "publication_type": "Article",
+            "description": "Background:\nHypodysfibrinogenemia is a rare hereditary fibrinogen disorder characterized by quantitative and qualitative fibrinogen defects. These fibrinogen defects can cause thrombotic and hemorrhagic phenotypes. Unfortunately, predicting the phenotype in a specific patient is often not possible with routine coagulation tests.\nAims:\nTo characteri...",
+            "publication_link": "https://www.researchgate.net/publication/376159053_Evaluation_of_Innovative_Laboratory_Tests_to_Predict_a_Thrombotic_Phenotype_in_a_Family_with_Dysfibrinogenemia_and_a_Novel_FGG_Mutation"
+        },
+        {
+            "title": "Large-language models binnen de klinische chemie",
+            "date_published": "Oct 2023",
+            "authors": [
+                "William van Doorn",
+                "Steef Kurstjens"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/374717893_Large-language_models_binnen_de_klinische_chemie"
+        },
+        {
+            "title": "Deep embedded clustering generalisability and adaptation for mixed datatypes: two critical care cohorts",
+            "date_published": "Aug 2023",
+            "authors": [
+                "Jip de Kok",
+                "Frank van Rosmalen",
+                "Jacqueline Koeze",
+                "Bas van Bussel"
+            ],
+            "publication_type": "Preprint",
+            "description": "We propose X-DEC, a novel deep clustering technique that can integrate mixed datatypes (in this study numerical and categorical variables). Deep Embedded Clustering (DEC) is a promising technique capable of managing extensive sets of variables and non-linear relationships. Nevertheless, DEC cannot adequately handle mixed datatypes. Therefore, we cr...",
+            "publication_link": "https://www.researchgate.net/publication/373708563_Deep_embedded_clustering_generalisability_and_adaptation_for_mixed_datatypes_two_critical_care_cohorts"
+        },
+        {
+            "title": "Direct Comparison of the Circadian Rhythm of Cardiac Myosin-Binding Protein C (cMyC) and Cardiac Troponin",
+            "date_published": "May 2023",
+            "authors": [
+                "Bashir Alaour",
+                "Thomas Kaier",
+                "Rasmus Bo Hasselbalch",
+                "Michael Marber"
+            ],
+            "publication_type": "Article",
+            "description": "To the Editor\nWe have previously shown that significant circadian oscillations exist for cardiac troponin T (cTnT) but not for cardiac troponin I (cTnI) (1).\nCardiac myosin-binding protein C (cMyC) is a novel protein biomarker of myocardial injury with a promising role in the diagnosis and risk stratification of acute myocardial injury.\nIn this stu...",
+            "publication_link": "https://www.researchgate.net/publication/371035332_Direct_Comparison_of_the_Circadian_Rhythm_of_Cardiac_Myosin-Binding_Protein_C_cMyC_and_Cardiac_Troponin"
+        },
+        {
+            "title": "Biological variation of Alzheimer\u2019s disease plasma biomarkers in healthy individuals",
+            "date_published": "Dec 2022",
+            "authors": [
+                "Wagner S. Brum",
+                "William van Doorn",
+                "Nicholas J. Ashton",
+                "Kaj Blennow"
+            ],
+            "publication_type": "Article",
+            "description": "Plasma biomarkers for Alzheimer\u2019s disease (AD) have demonstrated great performance to identify AD pathology in research cohorts, and recent studies also support their potential to monitor effects of disease\u2010modifying treatments. To properly interpret these biomarkers in research settings and to inform power calculations of future trials using them...",
+            "publication_link": "https://www.researchgate.net/publication/366447785_Biological_variation_of_Alzheimer's_disease_plasma_biomarkers_in_healthy_individuals"
+        },
+        {
+            "title": "Clinical complexity and impact of the ABC (Atrial fibrillation Better Care) pathway in patients with atrial fibrillation: a report from the ESC-EHRA EURObservational Research Programme in AF General Long-Term Registry",
+            "date_published": "Dec 2022",
+            "authors": [
+                "Giulio Francesco Romiti",
+                "Marco Proietti",
+                "Marco Vitolo",
+                "T. Pitt-Kerby"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/368744162_Clinical_complexity_and_impact_of_the_ABC_Atrial_fibrillation_Better_Care_pathway_in_patients_with_atrial_fibrillation_a_report_from_the_ESC-EHRA_EURObservational_Research_Programme_in_AF_General_Long"
+        },
+        {
+            "title": "High-Sensitivity Cardiac Troponin I and T Kinetics Differ following Coronary Bypass Surgery: A Systematic Review and Meta-Analysis",
+            "date_published": "Nov 2022",
+            "authors": [
+                "Ellen Denessen",
+                "Samuel Heuts",
+                "Jean H.T. Daemen",
+                "Alma M A Mingels"
+            ],
+            "publication_type": "Article",
+            "description": "BACKGROUND: Cardiac troponin I and T are both used for diagnosing myocardial infarction (MI) after coronary artery bypass grafting (CABG), also known as type 5 MI (MI-5). Different MI-5 definitions have been formulated, using multiples of the 99th percentile upper reference limit (10\u00d7, 35\u00d7, or 70\u00d7 URL), with or without supporting evidence. These de...",
+            "publication_link": "https://www.researchgate.net/publication/365310927_High-Sensitivity_Cardiac_Troponin_I_and_T_Kinetics_Differ_following_Coronary_Bypass_Surgery_A_Systematic_Review_and_Meta-Analysis"
+        },
+        {
+            "title": "Clinical complexity and impact of the ABC (Atrial fibrillation Better Care) pathway in patients with atrial fibrillation: a report from the ESC-EHRA EURObservational Research Programme in AF General Long-Term Registry",
+            "date_published": "Sep 2022",
+            "authors": [
+                "Giulio Francesco Romiti",
+                "Marco Proietti",
+                "Marco Vitolo",
+                "T. Pitt-Kerby"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nClinical complexity is increasingly prevalent among patients with atrial fibrillation (AF). The \u2018Atrial fibrillation Better Care\u2019 (ABC) pathway approach has been proposed to streamline a more holistic and integrated approach to AF care; however, there are limited data on its usefulness among clinically complex patients. We aim to determi...",
+            "publication_link": "https://www.researchgate.net/publication/363243586_Clinical_complexity_and_impact_of_the_ABC_Atrial_fibrillation_Better_Care_pathway_in_patients_with_atrial_fibrillation_a_report_from_the_ESC-EHRA_EURObservational_Research_Programme_in_AF_General_Long"
+        },
+        {
+            "title": "Diurnal Variations in Natriuretic Peptide Levels: Clinical Implications for the Diagnosis of Acute Heart Failure",
+            "date_published": "Jun 2022",
+            "authors": [
+                "Tobias Breidthardt",
+                "William van Doorn",
+                "Noreen van der Linden",
+                "Christian Mueller"
+            ],
+            "publication_type": "Article",
+            "description": "Background: \nCurrent guidelines recommend interpreting concentrations of NPs (natriuretic peptides) irrespective of the time of presentation to the emergency department. We hypothesized that diurnal variations in NP concentration may affect their diagnostic accuracy for acute heart failure.\n\nMethods: \nIn a secondary analysis of a multicenter diagno...",
+            "publication_link": "https://www.researchgate.net/publication/361173898_Diurnal_Variations_in_Natriuretic_Peptide_Levels_Clinical_Implications_for_the_Diagnosis_of_Acute_Heart_Failure"
+        },
+        {
+            "title": "Clinical utility and prognostic implications of the novel 4S-AF scheme to characterize and evaluate patients with atrial fibrillation: a report from ESC-EHRA EORP-AF Long-Term General Registry",
+            "date_published": "May 2022",
+            "authors": [
+                "Wern Yew Ding",
+                "Marco Proietti",
+                "Boriani Giuseppe",
+                "T Pitt-Kerby"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/360860739_Clinical_utility_and_prognostic_implications_of_the_novel_4S-AF_scheme_to_characterize_and_evaluate_patients_with_atrial_fibrillation_a_report_from_ESC-EHRA_EORP-AF_Long-Term_General_Registry"
+        },
+        {
+            "title": "Clinical utility and prognostic implications of the novel 4S-AF scheme to characterize and evaluate patients with atrial fibrillation: a report from ESC-EHRA EORP-AF Long-Term General Registry",
+            "date_published": "May 2022",
+            "authors": [
+                "Wern Yew Ding",
+                "Marco Proietti",
+                "Boriani Giuseppe",
+                "T Pitt-Kerby"
+            ],
+            "publication_type": "Article",
+            "description": "Aims The 4S-AF classification scheme comprises of four domains: stroke risk (St), symptoms (Sy), severity of atrial fibrillation (AF) burden (Sb), and substrate (Su). We sought to examine the implementation of the 4S-AF scheme in the EORP-AF General Long-Term Registry and compare outcomes in AF patients according to the 4S-AF-led decision-making pr...",
+            "publication_link": "https://www.researchgate.net/publication/368744349_Clinical_utility_and_prognostic_implications_of_the_novel_4S-AF_scheme_to_characterize_and_evaluate_patients_with_atrial_fibrillation_a_report_from_ESC-EHRA_EORP-AF_Long-Term_General_Registry"
+        },
+        {
+            "title": "Impact of malignancy on outcomes in European patients with atrial fibrillation: A report from the ESC\u2010EHRA EURObservational research programme in atrial fibrillation general long\u2010term registry",
+            "date_published": "Mar 2022",
+            "authors": [
+                "Vincenzo Malavasi",
+                "Marco Vitolo",
+                "Marco Proietti",
+                "T Pitt\u2010Kerby"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/360861082_Impact_of_malignancy_on_outcomes_in_European_patients_with_atrial_fibrillation_A_report_from_the_ESC-EHRA_EURObservational_research_programme_in_atrial_fibrillation_general_long-term_registry"
+        },
+        {
+            "title": "Impact of renal impairment on atrial fibrillation: ESC\u2010EHRA EORP\u2010AF Long\u2010Term General Registry",
+            "date_published": "Jan 2022",
+            "authors": [
+                "Wern Yew Ding",
+                "Tatjana S Potpara",
+                "Carina Blomstrom",
+                "T. Pitt\u2010Kerby"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/357956234_Impact_of_renal_impairment_on_atrial_fibrillation_ESC-EHRA_EORP-AF_Long-Term_General_Registry"
+        },
+        {
+            "title": "Impact of clinical phenotypes on management and outcomes in European atrial fibrillation patients: a report from the ESC-EHRA EURObservational Research Programme in AF (EORP-AF) General Long-Term Registry",
+            "date_published": "Dec 2021",
+            "authors": [
+                "Marco Proietti",
+                "Marco Vitolo",
+                "Stephanie Harrison",
+                "T. Pitt-Kerby"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nEpidemiological studies in atrial fibrillation (AF) illustrate that clinical complexity increase the risk of major adverse outcomes. We aimed to describe European AF patients\u2019 clinical phenotypes and analyse the differential clinical course.\n\nMethods\nWe performed a hierarchical cluster analysis based on Ward\u2019s Method and Squared Euclidea...",
+            "publication_link": "https://www.researchgate.net/publication/355432433_Impact_of_clinical_phenotypes_on_management_and_outcomes_in_European_atrial_fibrillation_patients_a_report_from_the_ESC-EHRA_EURObservational_Research_Programme_in_AF_EORP-AF_General_Long-Term_Registr"
+        },
+        {
+            "title": "Impact of clinical phenotypes on management and outcomes in European atrial fibrillation patients: a report from the ESC-EHRA EURObservational Research Programme in AF (EORP-AF) General Long-Term Registry",
+            "date_published": "Dec 2021",
+            "authors": [
+                "Marco Proietti",
+                "Marco Vitolo",
+                "Stephanie Harrison",
+                "T. Pitt-Kerby"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/360316075_Impact_of_clinical_phenotypes_on_management_and_outcomes_in_European_atrial_fibrillation_patients_a_report_from_the_ESC-EHRA_EURObservational_Research_Programme_in_AF_EORP-AF_General_Long-Term_Registr"
+        },
+        {
+            "title": "Physiological circadian rhythm of cardiac myosin-binding protein C (cMyC) and cardiac troponin",
+            "date_published": "Oct 2021",
+            "authors": [
+                "Bashir Alaour",
+                "Thomas Kaier",
+                "Zilan Demir",
+                "S J R Meex"
+            ],
+            "publication_type": "Article",
+            "description": "Introduction\nCardiac myosin-binding protein C (cMyC) is a novel protein biomarker of myocardial injury, with a promising role in the triage and risk stratification of patients with cardiac disease. Understanding the physiological diurnal oscillation of cMyC and cardiac troponin is important for the interpretation of single and serial measurements w...",
+            "publication_link": "https://www.researchgate.net/publication/355441922_Physiological_circadian_rhythm_of_cardiac_myosin-binding_protein_C_cMyC_and_cardiac_troponin"
+        },
+        {
+            "title": "Greater daily glucose variability and lower time in range assessed with continuous glucose monitoring are associated with greater aortic stiffness: The Maastricht Study",
+            "date_published": "Aug 2021",
+            "authors": [
+                "Yuri D. Foreman",
+                "William van Doorn",
+                "Nicolaas Schaper",
+                "Coen D. A. Stehouwer"
+            ],
+            "publication_type": "Article",
+            "description": "Aims\nCVD is the main cause of morbidity and mortality in individuals with diabetes. It is currently unclear whether daily glucose variability contributes to CVD. Therefore, we investigated whether glucose variability is associated with arterial measures that are considered important in CVD pathogenesis.\n\nMethods\nWe included participants of The Maas...",
+            "publication_link": "https://www.researchgate.net/publication/351606878_Greater_daily_glucose_variability_and_lower_time_in_range_assessed_with_continuous_glucose_monitoring_are_associated_with_greater_aortic_stiffness_The_Maastricht_Study"
+        },
+        {
+            "title": "Proportions of circulating transitional B cells associate with MRI activity in interferon beta-treated multiple sclerosis patients",
+            "date_published": "Jul 2021",
+            "authors": [
+                "Max Mimpen",
+                "Jan Damoiseaux",
+                "William van Doorn",
+                "Joost Smolders"
+            ],
+            "publication_type": "Article",
+            "description": "B-cells contribute to MS pathogenesis. The association of circulating B-cell phenotypes with combined unique active lesions (CUA) on MRI at 48 weeks follow-up was investigated in 50 interferon beta-treated MS patients. Transitional B-cell proportions were lower in participants with CUA at week 0 and 48 [p = 0.004, p = 0.002]. A decrease in circulat...",
+            "publication_link": "https://www.researchgate.net/publication/353248776_Proportions_of_circulating_transitional_B_cells_associate_with_MRI_activity_in_interferon_beta-treated_multiple_sclerosis_patients"
+        },
+        {
+            "title": "Machine learning-based glucose prediction with use of continuous glucose and physical activity monitoring data: The Maastricht Study",
+            "date_published": "Jun 2021",
+            "authors": [
+                "William van Doorn",
+                "Yuri D. Foreman",
+                "Nicolaas Schaper",
+                "Martijn C. G. J. Brouwers"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nClosed-loop insulin delivery systems, which integrate continuous glucose monitoring (CGM) and algorithms that continuously guide insulin dosing, have been shown to improve glycaemic control. The ability to predict future glucose values can further optimize such devices. In this study, we used machine learning to train models in predictin...",
+            "publication_link": "https://www.researchgate.net/publication/352731520_Machine_learning-based_glucose_prediction_with_use_of_continuous_glucose_and_physical_activity_monitoring_data_The_Maastricht_Study"
+        },
+        {
+            "title": "Cardiac Troponin T: The Impact of Posttranslational Modifications on Analytical Immunoreactivity in Blood up to the Excretion in Urine",
+            "date_published": "May 2021",
+            "authors": [
+                "Douwe de Boer",
+                "Alexander Streng",
+                "William van Doorn",
+                "Alma M A Mingels"
+            ],
+            "publication_type": "Chapter",
+            "description": "Cardiac troponin T (cTnT) is a sensitive and specific biomarker for detecting cardiac muscle injury. Its concentration in blood can be significantly elevated outside the normal reference range under several pathophysiological conditions. The classical analytical method in routine clinical analysis to detect cTnT in serum or plasma is a single comme...",
+            "publication_link": "https://www.researchgate.net/publication/351380027_Cardiac_Troponin_T_The_Impact_of_Posttranslational_Modifications_on_Analytical_Immunoreactivity_in_Blood_up_to_the_Excretion_in_Urine"
+        },
+        {
+            "title": "A comparison of machine learning models versus clinical evaluation for mortality prediction in patients with sepsis",
+            "date_published": "Jan 2021",
+            "authors": [
+                "William van Doorn",
+                "Patricia M Stassen",
+                "H.F. Borggreve",
+                "Steven J. R. Meex"
+            ],
+            "publication_type": "Article",
+            "description": "IntroductionPatients with sepsis who present to an emergency department (ED) have highly variable underlying disease severity, and can be categorized from low to high risk. Development of a risk stratification tool for these patients is important for appropriate triage and early treatment. The aim of this study was to develop machine learning model...",
+            "publication_link": "https://www.researchgate.net/publication/348611012_A_comparison_of_machine_learning_models_versus_clinical_evaluation_for_mortality_prediction_in_patients_with_sepsis"
+        },
+        {
+            "title": "Transparent Machine Learning models for Rapid Risk Stratification in the Emergency Department: A multi-center evaluation",
+            "date_published": "Nov 2020",
+            "authors": [
+                "William van Doorn",
+                "Floris Helmich",
+                "Paul M.E.L. van Dam",
+                "Steven J.R. Meex"
+            ],
+            "publication_type": "Preprint",
+            "description": "Introduction\nRisk stratification of patients presenting to the emergency department (ED) is important for appropriate triage. Using machine learning technology, we can integrate laboratory data from a modern emergency department and present these in relation to clinically relevant endpoints for risk stratification. In this study, we developed and e...",
+            "publication_link": "https://www.researchgate.net/publication/347217040_Transparent_Machine_Learning_models_for_Rapid_Risk_Stratification_in_the_Emergency_Department_A_multi-center_evaluation"
+        },
+        {
+            "title": "A comparison of machine learning models versus clinical evaluation for mortality prediction in patients with sepsis",
+            "date_published": "Nov 2020",
+            "authors": [
+                "William van Doorn",
+                "Patricia M Stassen",
+                "H.F. Borggreve",
+                "Steven J.R. Meex"
+            ],
+            "publication_type": "Preprint",
+            "description": "Introduction\nPatients with sepsis who present to an emergency department (ED) have highly variable underlying disease severity, and can be categorized from low to high risk. Development of a risk stratification tool for these patients is important for appropriate triage and early treatment. The aim of this study was to develop machine learning mode...",
+            "publication_link": "https://www.researchgate.net/publication/347178226_A_comparison_of_machine_learning_models_versus_clinical_evaluation_for_mortality_prediction_in_patients_with_sepsis"
+        },
+        {
+            "title": "Testing for IgA anti-tissue transglutaminase in routine clinical practice: Requesting behaviour in relation to prevalence of positive results",
+            "date_published": "Mar 2020",
+            "authors": [
+                "Maurits Damoiseaux",
+                "William van Doorn",
+                "Ellen van Lochem",
+                "Jan Damoiseaux"
+            ],
+            "publication_type": "Article",
+            "description": "Objective\nDue to the high awareness of coeliac disease and improvement of serological tests, the number of requested laboratory tests has increased substantially over the years. In the current study we have evaluated the requesting behaviour of distinct clinical disciplines in relation to the prevalence of positive results and in the context of exi...",
+            "publication_link": "https://www.researchgate.net/publication/340000995_Testing_for_IgA_anti-tissue_transglutaminase_in_routine_clinical_practice_Requesting_behaviour_in_relation_to_prevalence_of_positive_results"
+        },
+        {
+            "title": "Role of sFlt-1 and PlGF in the screening of small-for-gestational age neonates during pregnancy: A systematic review",
+            "date_published": "Nov 2019",
+            "authors": [
+                "Manouk Hendrix",
+                "Judith A P Bons",
+                "Ashlee van Haren",
+                "Salwan Al-Nasiry"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nFetal growth restriction, i.e. the restriction of genetically predetermined growth potential due to placental dysfunction, is a major cause of neonatal morbidity and mortality. The consequences of inadequate fetal growth can be life-long, but the risks can be reduced substantially if the condition is identified prenatally. Currently, scr...",
+            "publication_link": "https://www.researchgate.net/publication/337474239_Role_of_sFlt-1_and_PlGF_in_the_screening_of_small-for-gestational_age_neonates_during_pregnancy_A_systematic_review"
+        },
+        {
+            "title": "Biotin interference in high-sensitivity cardiac troponin T testing: a real-world evaluation in acute cardiac care",
+            "date_published": "Oct 2019",
+            "authors": [
+                "Wim Vroemen",
+                "William van Doorn",
+                "Dorien Kimenai",
+                "Steven J R Meex"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/336923822_Biotin_interference_in_high-sensitivity_cardiac_troponin_T_testing_a_real-world_evaluation_in_acute_cardiac_care"
+        },
+        {
+            "title": "High-Sensitivity Cardiac Troponin I and T Kinetics after Non-ST-Segment Elevation Myocardial Infarction",
+            "date_published": "Oct 2019",
+            "authors": [
+                "William van Doorn",
+                "Wim Vroemen",
+                "Martijn W Smulders",
+                "Steven J.R. Meex"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/336597622_High-Sensitivity_Cardiac_Troponin_I_and_T_Kinetics_after_Non-ST-Segment_Elevation_Myocardial_Infarction"
+        },
+        {
+            "title": "Association between antithrombotic treatment and outcomes at 1-year follow-up in patients with atrial fibrillation: the EORP-AF General Long-Term Registry",
+            "date_published": "Jul 2019",
+            "authors": [
+                "Cyril Zakine",
+                "Rodrigue Garcia",
+                "Kumar Narayanan",
+                "T Pitt-Kerby"
+            ],
+            "publication_type": "Article",
+            "description": "Aims\nIn recent years, stroke prevention in patients with atrial fibrillation (AF) has radically changed, with increasing use of non-vitamin K antagonist oral anticoagulants (NOACs). Contemporary European data on AF thromboprophylaxis are needed.\nMethods and results\nWe report 1-year follow-up data from the EURObservational Research Programme in Atri...",
+            "publication_link": "https://www.researchgate.net/publication/360335717_Association_between_antithrombotic_treatment_and_outcomes_at_1-year_follow-up_in_patients_with_atrial_fibrillation_the_EORP-AF_General_Long-Term_Registry"
+        },
+        {
+            "title": "Association between antithrombotic treatment and outcomes at 1-year follow-up in patients with atrial fibrillation: the EORP-AF General Long-Term Registry",
+            "date_published": "Jul 2019",
+            "authors": [
+                "Boriani Giuseppe",
+                "Marco Proietti",
+                "C\u00e9cile Laroche",
+                "T Pitt-Kerby"
+            ],
+            "publication_type": "Article",
+            "description": "Aims In recent years, stroke prevention in patients with atrial fibrillation (AF) has radically changed, with increasing use of non-vitamin K antagonist oral anticoagulants (NOACs). Contemporary European data on AF thromboprophylaxis are needed. Methods and results We report 1-year follow-up data from the EURObservational Research Programme in Atri...",
+            "publication_link": "https://www.researchgate.net/publication/368744158_Association_between_antithrombotic_treatment_and_outcomes_at_1-year_follow-up_in_patients_with_atrial_fibrillation_the_EORP-AF_General_Long-Term_Registry"
+        },
+        {
+            "title": "Contemporary stroke prevention strategies in 11 096 European patients with atrial fibrillation: a report from the EURObservational Research Programme on Atrial Fibrillation (EORP-AF) Long-Term General Registry",
+            "date_published": "May 2018",
+            "authors": [
+                "Boriani Giuseppe",
+                "Marco Proietti",
+                "C\u00e9cile Laroche",
+                "T Pitt-Kerby"
+            ],
+            "publication_type": "Article",
+            "description": "Aims Contemporary data regarding atrial fibrillation (AF) management and current use of oral anticoagulants (OACs) for\nstroke prevention are needed.\nMethodsand results\nThe EURObservational Research Programme on AF (EORP-AF) Long-Term General Registry analysed consecutive AF patients presenting to cardiologists in 250 centres from 27 European countr...",
+            "publication_link": "https://www.researchgate.net/publication/360306198_Contemporary_stroke_prevention_strategies_in_11_096_European_patients_with_atrial_fibrillation_a_report_from_the_EURObservational_Research_Programme_on_Atrial_Fibrillation_EORP-AF_Long-Term_General_Re"
+        },
+        {
+            "title": "Clinical laboratory practice recommendations for high-sensitivity cardiac troponin testing",
+            "date_published": "Apr 2018",
+            "authors": [
+                "William van Doorn",
+                "Wim Vroemen",
+                "Douwe de Boer",
+                "Steven J. R. Meex"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/324229831_Clinical_laboratory_practice_recommendations_for_high-sensitivity_cardiac_troponin_testing"
+        },
+        {
+            "title": "Twenty-Four-Hour Biological Variation Profiles of Cardiac Troponin I in Individuals with or without Chronic Kidney Disease",
+            "date_published": "Aug 2017",
+            "authors": [
+                "Noreen van der Linden",
+                "Judith Hilderink",
+                "Tom Cornelis",
+                "Steven J.R. Meex"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/319156407_Twenty-Four-Hour_Biological_Variation_Profiles_of_Cardiac_Troponin_I_in_Individuals_with_or_without_Chronic_Kidney_Disease"
+        },
+        {
+            "title": "Identification and Characterization of Cardiac Troponin T Fragments in Serum of Patients Suffering from Acute Myocardial Infarction",
+            "date_published": "Dec 2016",
+            "authors": [
+                "Alexander Streng",
+                "Douwe de Boer",
+                "William van Doorn",
+                "Will Wodzig"
+            ],
+            "publication_type": "Article",
+            "description": "Background: \nCardiac troponin T (cTnT) is the preferred biomarker for the diagnosis of acute myocardial infarction (AMI). It has been suggested that cTnT is present predominantly in fragmented forms in human serum following AMI. In this study, we have used a targeted mass spectrometry assay and epitope mapping using Western blotting to confirm this...",
+            "publication_link": "https://www.researchgate.net/publication/311552652_Identification_and_Characterization_of_Cardiac_Troponin_T_Fragments_in_Serum_of_Patients_Suffering_from_Acute_Myocardial_Infarction"
+        },
+        {
+            "title": "Cardiac troponin T degradation in serum is catalysed by human thrombin",
+            "date_published": "Nov 2016",
+            "authors": [
+                "Alexander Streng",
+                "Douwe de Boer",
+                "William van Doorn",
+                "Will Wodzig"
+            ],
+            "publication_type": "Article",
+            "description": "Cardiac troponin T (cTnT) has been shown to be present in fragmented forms in human serum after acute myocardial infarction (AMI). While calpain-1 and caspase-3 have been identified as intracellular proteases able to cleave the N-terminus of cTnT, it is still unclear which proteases are responsible for the extensive and progressive cTnT fragmentati...",
+            "publication_link": "https://www.researchgate.net/publication/309656632_Cardiac_troponin_T_degradation_in_serum_is_catalysed_by_human_thrombin"
+        },
+        {
+            "title": "The SAMe-TT2R2 score and quality of anticoagulation in atrial fibrillation: a simple aid to decision-making on who is suitable (or not) for vitamin K antagonists",
+            "date_published": "Apr 2015",
+            "authors": [
+                "Wern Yew Ding",
+                "Tatjana S Potpara",
+                "Carina Blomstrom",
+                "D. Angoulvant"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/360889663_The_SAMe-TT2R2_score_and_quality_of_anticoagulation_in_atrial_fibrillation_a_simple_aid_to_decision-making_on_who_is_suitable_or_not_for_vitamin_K_antagonists"
+        }
+    ]
+}
