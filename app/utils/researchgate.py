@@ -36,3 +36,7 @@ def get_profile(profile: str):
     # write to data/researchgate_profile.json
     with open(f"app/data/researchgate_profile.json", "w") as f:
         json.dump(profile_data, f, indent=4)
+
+
+if __name__ == "__main__":
+    get_profile("William-Doorn")

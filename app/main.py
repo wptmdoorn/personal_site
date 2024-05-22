@@ -4,7 +4,6 @@ import importlib
 import json
 
 from nicegui import app, ui
-from utils.researchgate import get_profile
 
 app.add_static_files('static', 'app/static')
 
@@ -48,5 +47,4 @@ def blog_page(page: str) -> None:
             ui.markdown('# Blog post not found')
 
 
-get_profile('William-Doorn')
 ui.run(title='William van Doorn')
