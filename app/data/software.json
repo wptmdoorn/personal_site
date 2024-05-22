@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Traffic Analyzer",
+    "description": "Analyze your home - work commute using Google Maps API and Python",
+    "source": "https://github.com/wptmdoorn/traffic_analyzer",
+    "demo": -1
+  },
+  {
+    "name": "Clinical Chemistry - Quiz App",
+    "description": "A quiz app for clinical chemistry students using R and the Shiny package",
+    "source": "https://github.com/wptmdoorn/kc_quiz_app",
+    "demo": "https://wptmdoorn.shinyapps.io/kcquizapp"
+  },
+  {
+    "name": "Traffic Analyzer",
+    "description": "Analyze your home - work commute using Google Maps API and Python",
+    "source": "https://github.com/wptmdoorn/traffic_analyzer",
+    "demo": -1
+  },
+  {
+    "name": "Clinical Chemistry - Quiz App",
+    "description": "A quiz app for clinical chemistry students using R and the Shiny package",
+    "source": "https://github.com/wptmdoorn/kc_quiz_app",
+    "demo": "https://wptmdoorn.shinyapps.io/kcquizapp"
+  }
+]

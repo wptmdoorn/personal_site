@@ -2,7 +2,7 @@ from contextlib import contextmanager
 from nicegui import ui
 
 # styling
-_header_row_classes = 'row w-full justify-start'
+_header_row_classes = 'row w-full justify-center items-center'
 _header_card_classes = '''
     q-ma-sm col-xs-12 col-sm-2 col-md-2 col-lg-2 no-shadow border-[1px]
     hover:bg-green-500 hover:scale-105 transform duration-500
@@ -11,7 +11,7 @@ _header_card_style = 'border-radius: 20px;'
 _header_card_img_style = 'height: 20px; min-height: 20px; min-width: 20px; width: 20px'
 
 _body_class = 'row w-full justify-center'
-_body_row_classes = 'w-full q-ma-sm'
+_body_row_classes = 'w-full q-ma-sm justify-center'
 
 _head_column_class = 'col-xs-12 col-sm-8 col-md-8 justify-center w-full'
 
@@ -36,7 +36,7 @@ def frame(navtitle: str):
 
     ui.page_title(f'{navtitle.capitalize()} | William van Doorn')
 
-    with ui.element('div').classes(_body_class):
+    with ui.element('div').classes(_body_class).style('font-family: sans-serif;'):
         with ui.element('div').classes(_head_column_class):
             with ui.element('div').classes(_header_row_classes):
                 for title in _headers:

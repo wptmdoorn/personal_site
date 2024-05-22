@@ -12,62 +12,64 @@
   <img src="/01_uncertainty/fig1.png" alt="drawing" width="80%"/> <br>
 </p>
 
-# How do we trust Machine Learning algorithms in Medicine?
+# Uncertainty Quantification in Healthcare: Trusting Machine Learning Algorithms
 
 ### Introduction 
 
-Recent advancements in machine learning (ML) have cleared the path to the deployment of machine learning-based decision support systems in a wide variety of areas including medicine. A substantial number of these systems have proven to achieve superior performance compared to classical systems and/or medical specialists. Yet, most of these systems are not implemented for daily clinical care because they still lack several other important features. One of these features is the **degree of trust** a medical specialist can, or rather should, have in the prediction of an algorithm. For example, consider the situation where an algorithm predicts the day of re-admission to assist a clinical specialist in deciding if a patient can be discharged or not. Currently, most machine learning algorithms output a so-called "point" prediction (_Figure 1A_) which does not provide us with an estimate of the uncertainty concerning the prediction. Recently, numerous research groups describe "probabilistic" algorithms (_Figure 1B_) which output a probability distribution amongst the prediction, resulting in a convenient way to quantify the uncertainty. 
+Recent advancements in machine learning (ML) have paved the way for deploying machine learning-based decision support systems in various sectors, including medicine. Many of these systems have demonstrated superior performance compared to traditional systems or medical specialists. However, despite their potential, most of these systems are not integrated into daily clinical care due to the lack of certain crucial features. One such feature is the **level of trust** that medical specialists can, or should, have in algorithmic predictions. For instance, consider a scenario where an algorithm predicts the day of re-admission to assist a clinical specialist in deciding whether a patient can be discharged. Presently, most machine learning algorithms produce a single "point" prediction (_Figure 1A_), which fails to convey the uncertainty surrounding the prediction. Recent research has introduced "probabilistic" algorithms (_Figure 1B_), which provide a probability distribution, offering a way to quantify uncertainty conveniently.
 
 <p align="center">
   <img src="/01_uncertainty/fig1.png" alt="drawing" width="80%"/> <br>
-  <span style="color:gray; font-size:0.8em;"><b>Figure 1:</b> (A) Point-wise prediction of days to re-admission for patient A (blue) and patient B (orange). No degree of uncertainty is displayed. (B) Probabilistic prediction with uncertainty estimation in the form of a probability distribution around the predictions of patients A and B.</span>
+  <span style="color:gray; font-size:0.8em;"><b>Figure 1:</b> (A) Point-wise prediction of days to re-admission for patient A (blue) and patient B (orange), without displaying any degree of uncertainty. (B) Probabilistic prediction with uncertainty estimation represented by a probability distribution around the predictions of patients A and B.</span>
 </p>
 
-These uncertainty estimates would be beneficial for a clinical specialist in putting the algorithmic prediction into context. In this blog post, we will briefly discuss several approaches to model this predictive uncertainty. Next, we will pick a recent implementation based on gradient boosting systems and provide a simple example in an emergency department setting.
+These uncertainty estimates can be invaluable for clinical specialists in contextualizing algorithmic predictions. In this blog post, we'll briefly explore various approaches to modeling predictive uncertainty. Subsequently, we'll delve into a recent implementation based on gradient boosting systems and provide a simple example in an emergency department setting.
 
-### Modeling predictive uncertainty
-Different approaches to model uncertainty using probabilistic algorithms have been described in the literature. From a statistical point of view, we can categorize these methods as either non-Bayesian (frequentist) and Bayesian. Furthermore, one would preferentially use algorithms that are -built on top of, or similar to- existing architectures that work well for that specific task, such as deep neural networks for image classification, a recurrent neural network for natural language processing, and so on. In medicine, we frequently deal with structured, tabular data, and it has been shown numerous times that gradient boosting systems are superior to other machine learning algorithms [1].
+### Modeling Predictive Uncertainty
 
-In brief, gradient boosting systems employ an ensemble of weak learners (here decision trees), which are combined in an iterative process. The aim is to sequentially improve model accuracy, where each tree attempts to correct the errors of the preceding stage. For an extensive description of gradient boosting in clinical medicine, see the attached reference [2]. 
-A recent [paper](https://arxiv.org/abs/1910.03225) by Tony Duan, Anand Avati and colleagues describes the implementation of probabilistic predictions using gradient boosting systems, which in turn allows the quantification of uncertainty amongst these predictions [3].
+Different approaches to modeling uncertainty using probabilistic algorithms have been outlined in the literature. From a statistical perspective, these methods can be categorized as either non-Bayesian (frequentist) or Bayesian. Additionally, it's preferable to employ algorithms that are either built upon existing architectures or are similar to those that have proven effective for a specific task. In medicine, where structured, tabular data is common, gradient boosting systems have repeatedly demonstrated superiority over other machine learning algorithms [1].
+
+In essence, gradient boosting systems utilize an ensemble of weak learners (such as decision trees), which are iteratively combined to enhance model accuracy. Each tree aims to correct the errors of the preceding stage, leading to sequential improvement in model performance. For a detailed description of gradient boosting in clinical medicine, refer to the attached reference [2]. A recent paper by Tony Duan, Anand Avati, and colleagues introduces the implementation of probabilistic predictions using gradient boosting systems, enabling the quantification of uncertainty [3].
 
 ### NGBoost: Natural Gradient Boosting for Probabilistic Prediction
-NGBoost is a recently developed gradient boosting algorithm implemented in the Python language on top of scikit-learn. Complete source code and implementation details are available at [Github](https://stanfordmlgroup.github.io/projects/ngboost/). NGBoost is consists of three essential components: a set of base learners, the probability distribution, and a scoring role (_Figure 2_).
+
+NGBoost is a recently developed gradient boosting algorithm implemented in Python using scikit-learn. Comprehensive source code and implementation details are available on [Github](https://stanfordmlgroup.github.io/projects/ngboost/). NGBoost comprises three essential components: a set of base learners, the probability distribution, and a scoring role (_Figure 2_).
 
 <p align="center">
   <img src="/01_uncertainty/fig2.png" alt="drawing" width="100%"/> <br>
-  <span style="color:gray; font-size:0.8em;"><b>Figure 2:</b> Schematic overview of the NGBoost algorithm consisting of three components: base learners, a probability distribution and a scoring role. Image derived from the NGBoost <a href="https://stanfordmlgroup.github.io/projects/ngboost/">homepage</a>.</span>
+  <span style="color:gray; font-size:0.8em;"><b>Figure 2:</b> Schematic overview of the NGBoost algorithm, including its three components: base learners, a probability distribution, and a scoring role. Image adapted from the NGBoost <a href="https://stanfordmlgroup.github.io/projects/ngboost/">homepage</a>.</span>
 </p>  
 
-Most frequently, we use simple decision trees as base learners, but using more complex tree structures as base learners is definitely an option and should be explored further. The probability distribution needs to be compatible with the output variable, e.g., a Normal distribution if we want to predict a continuous variable. Our approach of modeling a probability distribution over the output results in a natural way to quantify those predictive uncertainties. The quality of our modeled distributions are evaluated by comparing them to the true distribution using a scoring rule. We will apply this framework to predict days of re-admission in an emergency department setting.
+While simple decision trees are commonly used as base learners, employing more complex tree structures is also a viable option worth exploring. The choice of probability distribution should align with the output variable; for instance, a Normal distribution is suitable for predicting continuous variables. By modeling a probability distribution over the output, we naturally quantify predictive uncertainties. The quality of these modeled distributions is evaluated by comparing them to the true distribution using a scoring rule. We'll apply this framework to predict days of re-admission in an emergency department setting.
 
-### NGBoost in practice
-The emergency department (ED), with its highly condensed time frame for decision-making, represents a unique and challenging environment for algorithms to assist clinical specialists in their decision making. A frequent decision for clinical specialists to consider is to decide whether or not a patient can be discharged from the ED. A clinician has to ensure discharging is safe and that the patient will not re-admit to the hospital in a short notice. Therefore, we aim to develop an algorithm that predicts days to re-admission of an individual patient, ultimately assisting the clinical specialist in his decision-making.
+### NGBoost in Practice
 
-We have access to a dataset consisting of 19.282 patient presentations to an ED with 11 variables collected during this presentation. These variables include simple characteristics, history, and several laboratory measurements. Also, it contains a variable which represents the numeric amount of days before the patient was re-admitted to the hospital:  
+The emergency department (ED), with its compressed decision-making timeframe, poses a unique challenge for algorithms assisting clinical specialists. One common decision clinicians face is whether to discharge a patient from the ED safely, considering the risk of re-admission. Hence, our goal is to develop an algorithm that predicts the days to re-admission for individual patients, thereby aiding clinical decision-making.
+
+We have access to a dataset comprising 19,282 patient presentations to an ED, encompassing 11 variables collected during each presentation. These variables include demographic characteristics, medical history, and various laboratory measurements. Additionally, the dataset includes the number of days before a patient was re-admitted to the hospital:  
 * Age  
 * Sex  
 * Time of presentation  
-* Last admission (in days)  
-* Clinical risk score MEDS   
-* Amount of comorbidities  
-* Amount of drugs taken  
+* Days since last admission  
+* Clinical risk score (MEDS)   
+* Number of comorbidities  
+* Number of drugs taken  
 * Respiratory rate  
 * Hemoglobin level  
 * Lactate level    
 * CRP level   
-* <b>Days of re-admission (outcome)</b>    
+* <b>Days to re-admission (outcome)</b>    
 
-Using standard machine learning workflow, we will randomly partition this dataset into 70% to use for algorithm development (the ‘training’ dataset), and the remainder (30%) to use in evaluating the performance of our algorithm (the ‘test’ dataset). The corresponding Python code for loading and partitioning our data is:
+Using a standard machine learning workflow, we'll randomly partition this dataset into 70% for algorithm development (the ‘training’ dataset) and reserve the remaining 30% for evaluating our algorithm's performance (the ‘test’ dataset). The corresponding Python code for loading and partitioning our data is as follows:
 
 ```python
 data = pd.read_csv('/data/emergency_department.csv') # Read data
-X_data = data.drop(columns=['readmission_days'] # Extract 11 features to use for prediction
+X_data = data.drop(columns=['readmission_days']) # Extract 11 features for prediction
 Y_data = data['readmission_days'] # Extract outcome variable
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.30) # Split our data into 70% train/30% test
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.30) # Split data into 70% train/30% test
 ```
 
-We will initialize our NGBoost algorithm with standard settings: a simple decision tree as the base learner, a Normal distribution as output distribution to model, and the maximum likelihood estimate (MLE) as our scoring function. Next, we will train our NGBoost algorithm using data derived from the training dataset.
+We'll initialize our NGBoost algorithm with standard settings: a simple decision tree as the base learner, a Normal distribution for output modeling, and the maximum likelihood estimate (MLE) as our scoring function. Subsequently, we'll train our NGBoost algorithm using data derived from the training dataset.
 
 ```python
 ngb = NGBRegressor(Base=default_tree_learner, 
@@ -78,26 +80,27 @@ ngb = NGBRegressor(Base=default_tree_learner,
 ngb.fit(X_train, Y_train)
 ```
 
-Once we trained the NGBoost algorithm, we can assess the overall performance of the NGBoost algorithm in the test dataset, which the algorithm was not exposed to before. We will use the root mean squared error (MSE) and negative log-likelihood (NLL) to assess overall performance. This results in the following numbers:
+After training the NGBoost algorithm, we'll assess its performance on the test dataset, which the algorithm hasn't encountered before. We'll use root mean squared error (RMSE) and negative log-likelihood (NLL) to evaluate overall performance, yielding the following results:
 
 ```python
 RMSE in test dataset: 3.110
 NLL in test dataset: 2.130
 ```
 
-Overall, the performance of our algorithm can be considered reasonable. The real strength of our algorithms come to light when we look at individual predictions. Two examples are shown below (_Figure 3_), where we visualized the algorithm prediction, the normal distribution (density) amongst the prediction, and also the “true” days to re-admission.
+Overall, the algorithm's performance can be deemed reasonable. However, the true strength of our algorithm lies in individual predictions. Below (_Figure 3_), we present two examples where we visualize the algorithm's prediction, the normal distribution around the prediction, and the true days to re-admission.
 
 <p align="center">
   <img src="/01_uncertainty/fig3.png" alt="drawing" width="100%"/> <br>
-  <span style="color:gray; font-size:0.8em;"><b>Figure 3:</b> (A) Example of a prediction and its modeled normal distribution. We observe that the distribution around the prediction is tightly spaced. (B) Example of a prediction and its modeled normal distribution which shows a wider distribution compared to A. Also, we observe that the distance to the true label is greater than in example A.</span>
+  <span style="color:gray; font-size:0.8em;"><b>Figure 3:</b> (A) Example of a prediction and its modeled normal distribution, showing a tightly spaced distribution around the prediction. (B) Example of a prediction and its modeled normal distribution with a wider distribution compared to A, along with a greater distance from the true label than in example A.</span>
 </p>  
 
-The modeled distributions around the predictions provide us an estimation of the degree of uncertainty amongst a prediction. We can clearly observe the left prediction (_Figure 3A_) has a smaller distribution compared to the right prediction (_Figure 3B_), which also is reflected in the prediction being much closer to the real value.
+The modeled distributions around the predictions offer an estimate of the uncertainty associated with each prediction. Notably, the left prediction (_Figure 3A_) exhibits a smaller distribution compared to the right prediction (_Figure 3B_), reflecting the prediction's proximity to the real value.
 
 ### Conclusion
-Machine learning algorithms have shown excellent discriminatory performance in medicine but to date still, require features such as uncertainty quantification. In this blog post, we employed NGBoost, a recent implementation of gradient boosting trees, to provide a probabilistic prediction in an emergency department dataset. We were able to predict days to re-admission for an individual patient, and most importantly, provide individual uncertainty measures amongst the prediction. These probabilistic predictions are the first step towards more complete machine learning algorithms for medicine.
+
+Machine learning algorithms have demonstrated impressive discriminatory performance in medicine. However, to be truly effective, they must incorporate features such as uncertainty quantification. In this blog post, we utilized NGBoost, a recent implementation of gradient boosting trees, to provide probabilistic predictions in an emergency department dataset. We successfully predicted days to re-admission for individual patients while offering individual uncertainty measures. These probabilistic predictions represent a significant step towards developing more comprehensive machine learning algorithms for medicine.
 
 **References**  
-1. Fernandez-Delgado, M., Cernadas, E., Barro, S., and Amorim, D. Do we need hundreds of classifiers to solve real world classification problems? The Journal of Machine Learning Research, 15(1):3133–3181, 2014  
+1. Fernandez-Delgado, M., Cernadas, E., Barro, S., and Amorim, D. Do we need hundreds of classifiers to solve real-world classification problems? The Journal of Machine Learning Research, 15(1):3133–3181, 2014  
 2. Zhang, Z., Zhao, Y., Canes, A., Steinberg, D., Lyashevska, O., & , . (2019). Predictive analytics with gradient boosting in clinical medicine. Annals of translational medicine, 7, 152.  
 3. Duan, T., Avati, A., Ding, D., Basu, A., Andrew, N.G., & Schuler, A. (2019). NGBoost: Natural Gradient Boosting for Probabilistic Prediction. arXiv e-prints, arXiv:1910.03225.  

@@ -5,11 +5,11 @@ ENV PLAYWRIGHT_BROWSERS_PATH=/app/ms-playwright
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
-RUN locale-gen nl_NL.UTF-8  
-ENV LANG nl_NL.UTF-8  
-ENV LANGUAGE nl_NL:nl 
-ENV LC_ALL nl_NL.UTF-8  
-RUN update-locale LANG=nl_NL.UTF-8
+#RUN locale-gen nl_NL.UTF-8  
+#ENV LANG nl_NL.UTF-8  
+#ENV LANGUAGE nl_NL:nl 
+#ENV LC_ALL nl_NL.UTF-8  
+# RUN update-locale LANG=nl_NL.UTF-8
 
 WORKDIR /code
 RUN mkdir -p /code/output/

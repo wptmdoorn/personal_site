@@ -20,8 +20,6 @@ def index_page() -> None:
         home.content()
 
 
-# main pages
-
 @ui.page('/{page}')
 def page(page: str) -> None:
     if os.path.exists(f'app/pages/{page}.py'):
@@ -29,8 +27,6 @@ def page(page: str) -> None:
 
         with theme.frame(page):
             page_module.content()
-
-# blog pages
 
 
 @ui.page('/blog/{page}')
@@ -48,7 +44,7 @@ def blog_page(page: str) -> None:
                          f'and last updated on {metadata["last_mod"]}').style('font-size: 12px; font-style: italic; font-color: grey')
                 ui.markdown(content).classes('w-full')
     else:
-        with theme.frame('xxxx'):
+        with theme.frame('Blog'):
             ui.markdown('# Blog post not found')
 
 

@@ -9,7 +9,7 @@ services:
       - 8080
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.fastapi.rule=Host(`pydoorn.nl`)"
+      - "traefik.http.routers.fastapi.rule=Host(`wptmdoorn.name`)"
       - "traefik.http.routers.fastapi.tls=true"
       - "traefik.http.routers.fastapi.tls.certresolver=letsencrypt"
     volumes:

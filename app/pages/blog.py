@@ -23,7 +23,7 @@ def content() -> None:
     # sort by last year first
     metadata = metadata.sort_values('jaar', ascending=False)
 
-    with ui.list().props('separator').style('width: 100%'):
+    with ui.list().props('separator').style('width: 100%; font-size:1.0rem'):
         for year, group in metadata.groupby('jaar', sort=False):
             ui.item_label(year).props('header').classes('text-bold')
             ui.separator()

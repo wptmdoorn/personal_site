@@ -21,7 +21,7 @@ def content() -> None:
 
     )
 
-    with ui.list().props('separator'):
+    with ui.list().props('separator').style('width: 100%; font-size:1.0rem'):
         for year, group in publications:
             ui.item_label(year).props('header').classes('text-bold')
             ui.separator()
