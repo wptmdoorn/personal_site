@@ -2,7 +2,6 @@ from operator import itemgetter
 from itertools import groupby
 from nicegui import ui
 
-from utils.researchgate import get_profile
 import json
 
 
