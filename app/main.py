@@ -3,6 +3,7 @@ import theme
 import os
 import importlib
 import json
+from utils.startup import register_dash_apps
 
 from nicegui import app, ui
 
@@ -47,6 +48,24 @@ def blog_page(page: str) -> None:
         with theme.frame('Blog'):
             ui.markdown('# Blog post not found')
 
+
+@ui.page('/software/{page}')
+def software_page(page: str) -> None:
+    print('software hello')
+    print(page)
+
+    if os.path.exists(f'app/software/{page}'):
+        page_module = importlib.import_module(f'software.{page}.main')
+
+        if page_module.SOFTWARE_TYPE == 'DASH':
+            # we already registered DASH apps, see above
+            ui.open(f'/software_dash/{page}')
+
+        else:
+            print('xxx')
+
+
+register_dash_apps()
 
 ui.run(title='William van Doorn',
        favicon=f'''data: image/png;base64,{b64encode(

@@ -18,7 +18,7 @@ def content() -> None:
                 with ui.grid(columns=2).classes('row w-full justify-center items-center'):
                     if s['source'] != -1:
                         ui.button('Source', icon='home').props(
-                            'rounded glossy color=grey').on_click(lambda: ui.open(s['source']))
+                            'rounded glossy color=grey').on_click(lambda s=s: ui.open(s['source']))
                     if s['demo'] != -1:
                         ui.button('Demo', icon='directions').props(
-                            'rounded glossy color=grey').on_click(lambda: ui.open(s['demo']))
+                            'rounded glossy color=grey').on_click(lambda s=s: ui.open(s['demo']))
