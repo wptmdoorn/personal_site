@@ -1,3 +1,4 @@
+from base64 import b64encode
 import theme
 import os
 import importlib
@@ -47,4 +48,6 @@ def blog_page(page: str) -> None:
             ui.markdown('# Blog post not found')
 
 
-ui.run(title='William van Doorn')
+ui.run(title='William van Doorn',
+       favicon=f'''data: image/png;base64,{b64encode(
+           open('app/static/home_profile.png', 'rb').read()).decode('utf-8')}''')
