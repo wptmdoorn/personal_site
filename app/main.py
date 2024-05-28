@@ -81,4 +81,4 @@ print(
 ui.run(title='William van Doorn',
        favicon=f'''data: image/png;base64,{b64encode(
            open('app/static/home_profile.png', 'rb').read()).decode('utf-8')}''',
-       storage_secret=os.getenv('STORAGE_SECRET'))
+       storage_secret=os.getenv('STORAGE_SECRET') or 'storage_secret')
