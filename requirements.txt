@@ -4,3 +4,4 @@ pandas
 pytube
 dash
 plotly
+pymongo
