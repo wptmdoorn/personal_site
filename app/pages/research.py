@@ -26,7 +26,6 @@ def content() -> None:
             ui.separator()
 
             for p in group:
-                print(p)
 
                 with ui.item(on_click=lambda p=p: ui.open(p['publication_link'])):
                     with ui.item_section().props('avatar'):

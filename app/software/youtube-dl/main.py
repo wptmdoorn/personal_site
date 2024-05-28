@@ -57,12 +57,6 @@ def content():
 
         video_information.refresh()
 
-        # app.storage.client['stream'] = await run.cpu_bound(_task, link.value)
-
-        # print('video ready!!!!!')
-        # print(output.getvalue().hex()[:100] + '...')
-        # print(len(output.getvalue()))
-
         app.storage.user['ready'] = True
 
     async def download_mp4():
