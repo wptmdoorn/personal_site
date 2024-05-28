@@ -2,3 +2,5 @@ nicegui==1.4.23
 parsel==1.9.1
 pandas
 pytube
+dash
+plotly
