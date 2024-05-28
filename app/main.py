@@ -54,13 +54,11 @@ def blog_page(page: str) -> None:
 
 @ui.page('/software/{page}')
 def software_page(page: str) -> None:
-
     if os.path.exists(f'app/software/{page}'):
         page_module = importlib.import_module(f'software.{page}.main')
 
         if page_module.SOFTWARE_TYPE == 'DASH':
-            # we already registered DASH apps, see above
-            ui.open(f'/software_dash/{page}')
+            ui.open(f'/software/dash/{page}')
 
         elif page_module.SOFTWARE_TYPE == 'NICEGUI':
             with theme.frame(page):
