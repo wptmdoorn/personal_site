@@ -74,10 +74,6 @@ for blog in os.listdir('app/blogs'):
 # Load env and run app
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
-print(
-    f'Running app with storage secret: {os.getenv("STORAGE_SECRET")[:5]}...'
-)
-
 ui.run(title='William van Doorn',
        favicon=f'''data: image/png;base64,{b64encode(
            open('app/static/home_profile.png', 'rb').read()).decode('utf-8')}''',
