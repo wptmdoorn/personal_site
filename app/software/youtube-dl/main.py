@@ -1,8 +1,9 @@
 from nicegui import ui, app, run
-from pytube import YouTube
+# from pytube import YouTube
 from io import BytesIO
 import base64
 import sys
+from pytubefix import YouTube
 
 SOFTWARE_TYPE = "NICEGUI"
 
@@ -44,14 +45,22 @@ def content():
                       on_click=download_mp4)
 
     def retrieve_mp4():
-        video = YouTube(link.value)
+        # video = YouTube(link.value)
 
-        streams = video.streams.filter(
+        # streams = video.streams.filter(
+        #    file_extension="mp4",
+        #    progressive=True
+        # )
+
+        yt = YouTube(link.value)
+        print(yt.title)
+
+        streams = yt.streams.filter(
             file_extension="mp4",
             progressive=True
         )
 
-        app.storage.user['title'] = video.title
+        app.storage.user['title'] = yt.title
         app.storage.user['resolutions'] = {
             i: f'{s.resolution} - {round(s.filesize_mb, 2)} MB' for i, s in enumerate(streams)}
 
