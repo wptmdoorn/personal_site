@@ -1,3 +1,4 @@
+from typing import Any
 import uvicorn
 from base64 import b64encode
 import theme
@@ -10,16 +11,15 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-
+from jinja2 import pass_context
 from nicegui import app, ui
 
 app.add_static_files('static', 'app/static')
 fapp = FastAPI()
 
-# Home Page
-
-
 # @ui.page('/')
+
+
 def index_page() -> None:
     with theme.frame('home'):
         from pages import home
@@ -83,6 +83,20 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 # tryout
 templates = Jinja2Templates(directory="app/templates")
 fapp.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+
+@pass_context
+def https_for(context: dict, name: str, **path_params: Any) -> str:
+    request: Request = context['request']
+    http_url = request.url_for(name, **path_params)
+    print(f"URL: {http_url}")
+    print(str(http_url))
+    print(request)
+
+    return str(http_url).replace('http://', 'https://')
+
+
+templates.env.globals["https_for"] = https_for
 
 
 @app.get("/v2/{page}", response_class=HTMLResponse)
