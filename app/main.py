@@ -1,4 +1,3 @@
-from typing import Any
 import uvicorn
 from base64 import b64encode
 import theme
@@ -13,7 +12,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import jinja2
 from nicegui import app, ui
-from utils.researchgate import get_publication_list
+from app.utils.obtain_research import get_publication_list
 from utils.blog import get_blog_metadata
 from jinja_markdown2 import MarkdownExtension
 
