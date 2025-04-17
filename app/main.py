@@ -48,9 +48,8 @@ objects = {
 }
 
 
-@app.get("/")
-async def return_home(request: Request):
-    print('hello')
+@ui.page('/')
+def home_page(request: Request) -> None:
     return templates.TemplateResponse(
         request=request, name="home.html",
         context=objects["home"],
@@ -59,8 +58,6 @@ async def return_home(request: Request):
 
 @app.get("/{page}", response_class=HTMLResponse)
 async def return_static(request: Request, page: str):
-    print(f'called!! p: {page}')
-    print(page)
     page = page.lower()
     page = page if page != "" else "home"
     if page in ["home", "blog", "software", "research"]:
@@ -85,9 +82,6 @@ def blog_page(request: Request, page: str):
         with open(f'app/blogs/{page}/blog.md', encoding='utf-8') as f:
             data = f.read().split('---')
             metadata, content = json.loads(data[1]), "".join(data[2:])
-
-            print(content)
-
             return jinja_env.get_template("blog_individual.html").render(
                 {"metadata": metadata, "content": content},
             )
