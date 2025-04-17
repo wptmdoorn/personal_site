@@ -7,3 +7,4 @@ dash
 plotly
 pymongo
 openpyxl
+jinja2-markdown
