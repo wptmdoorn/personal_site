@@ -8,4 +8,4 @@ plotly
 pymongo
 openpyxl
 jinja2
-jinja2-markdown
+jinja-markdown2
