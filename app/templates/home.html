@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Research Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="{{ url_for('static', path='/your-logo.png') }}" alt="Website Logo">
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#intro">Home</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#software">Software</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Intro Section -->
+        <section id="intro" class="intro-section">
+            <div class="intro-text">
+                <h1>William van Doorn</h1>
+                <p>Hi, I’m William. I’m currently a resident in clinical chemistry at Maastricht University Medical Center. I also have a passion for building (digital) stuff.</p>
+                <p>This website is my personal corner on the web, where I share my writing, projects, tutorials, and whatever else inspires me. You can explore my blog or check out the projects page to see some of my open-source work.</p>
+                <p>The site is completely ad-free, with no affiliate links, tracking, or paywalls—just a space for me to express myself and share what I’ve learned. My goal is to inspire others to create their own digital spaces and explore their creativity.</p>
+                <p>Feel free to contact me by email at wptmdoorn at gmail.com!</p>
+                <div class="social-links">
+                    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="intro-image">
+                <img src="{{ url_for('static', path='/your-logo.png') }}" alt="William van Doorn">
+            </div>
+        </section>
+
+        <!-- Blog Section with Grid Layout -->
+        <section id="blog" class="blog-section">
+            <h1>Blog</h1>
+            <p>Explore my thoughts on clinical chemistry, technology, and more through my blog posts. Here are a couple of highlights:</p>
+            <ul class="blog-list">
+                <li class="blog-card">
+                    <h2>Introduction to Machine Learning in Healthcare</h2>
+                    <p>A beginner's guide to applying machine learning techniques in medical research...</p>
+                    <button class="read-more-btn">Read More</button>
+                </li>
+                <li class="blog-card">
+                    <h2>Latest Advances in Biomarker Studies</h2>
+                    <p>An overview of recent breakthroughs in biomarker research and their implications...</p>
+                    <button class="read-more-btn">Read More</button>
+                </li>
+            </ul>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="blog.html" class="view-details-btn">View All Blog Posts</a>
+            </div>
+        </section>
+
+        <!-- Research Teaser Section -->
+        <section id="research" class="research-section">
+            <h1>Research</h1>
+            <p>My research focuses on advancing clinical chemistry and healthcare through innovative methods, including machine learning and biomarker studies. Below are some of my recent publications—check out the full list for more!</p>
+            <ul class="research-list">
+                <li>
+                    <h3>The laboratory parameters-derived CoLab score as an indicator of the host response in ICU COVID-19 patients decreases over time: a prospective cohort study (2024)</h3>
+                    <p>Tom Schoenmakers, Mathie P.G. Leers, Stefan H.M. Gorissen and Andrea Peeters</p>
+                </li>
+                <li>
+                    <h3>Machine learning for risk stratification in the emergency department (MARS-ED) study protocol (2024)</h3>
+                    <p>Paul M.E.L. van Dam, William van Doorn, Floor van Gils and Patricia M Stassen</p>
+                </li>
+            </ul>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="research.html" class="view-details-btn">View All Research</a>
+            </div>
+        </section>
+
+        <!-- Software Section -->
+        <section id="software" class="software-section">
+            <h1>Software</h1>
+            <p>Check out some of my open-source projects that showcase my passion for building digital tools. Here are a couple of highlights:</p>
+            <ul class="software-list">
+                <li class="software-card">
+                    <h3>HealthML Toolkit</h3>
+                    <p>A library for implementing machine learning models in healthcare applications...</p>
+                    <div class="button-group">
+                        <a href="https://github.com/yourusername/healthml" class="source-btn" target="_blank">Source Code</a>
+                        <a href="https://yourproject1-demo.com" class="demo-btn" target="_blank">Live Demo</a>
+                    </div>
+                </li>
+                <li class="software-card">
+                    <h3>Biomarker Analyzer</h3>
+                    <p>A tool for analyzing and visualizing biomarker data in clinical studies...</p>
+                    <div class="button-group">
+                        <a href="https://github.com/yourusername/biomarker" class="source-btn" target="_blank">Source Code</a>
+                        <a href="https://yourproject2-demo.com" class="demo-btn" target="_blank">Live Demo</a>
+                    </div>
+                </li>
+            </ul>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="software.html" class="view-details-btn">View All Projects</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h1>Contact</h1>
+            <p>Feel free to reach out to me via email at <a href="mailto:wptmdoorn@gmail.com">wptmdoorn@gmail.com</a>.</p>
+            <p>Alternatively, you can connect with me on social media:</p>
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 My Research Website. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Smooth Scrolling and Mobile Menu -->
+    <script>
+        // Smooth Scrolling
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    console.log('smooth scrolling!!!');
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    console.log(targetId, targetElement);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 70,
+                            behavior: 'smooth'
+                        });
+                        console.log('scroll...');
+                    }
+                    // Close mobile menu after clicking a link
+                    if (window.innerWidth <= 768) {
+                        document.querySelector('.nav-links').style.display = 'none';
+                        document.querySelector('.menu-toggle').classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+            }
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const isClickInside = menuToggle.contains(e.target) || navLinks.contains(e.target);
+                if (!isClickInside && navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                    menuToggle.classList.remove('active');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

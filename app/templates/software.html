@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Software Projects</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="static/your-logo.png" alt="Website Logo">
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html#intro">Home</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Software Section -->
+        <section class="software-section">
+            <h1>Software</h1>
+            <ul class="software-list">
+                <li class="software-card">
+                    <h3>HealthML Toolkit</h3>
+                    <p>A library for implementing machine learning models in healthcare applications, designed for ease of use and scalability...</p>
+                    <div class="button-group">
+                        <a href="https://github.com/yourusername/healthml" class="source-btn" target="_blank">Source Code</a>
+                        <a href="https://yourproject1-demo.com" class="demo-btn" target="_blank">Live Demo</a>
+                    </div>
+                </li>
+                <li class="software-card">
+                    <h3>Biomarker Analyzer</h3>
+                    <p>A tool for analyzing and visualizing biomarker data in clinical studies, with interactive features and export options...</p>
+                    <div class="button-group">
+                        <a href="https://github.com/yourusername/biomarker" class="source-btn" target="_blank">Source Code</a>
+                        <a href="https://yourproject2-demo.com" class="demo-btn" target="_blank">Live Demo</a>
+                    </div>
+                </li>
+                <li class="software-card">
+                    <h3>DataViz Helper</h3>
+                    <p>A utility for creating custom visualizations from clinical datasets, built with modern web technologies...</p>
+                    <div class="button-group">
+                        <a href="https://github.com/yourusername/dataviz" class="source-btn" target="_blank">Source Code</a>
+                        <a href="https://yourproject3-demo.com" class="demo-btn" target="_blank">Live Demo</a>
+                    </div>
+                </li>
+                <!-- Add more software projects as needed -->
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 My Research Website. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+            }
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const isClickInside = menuToggle.contains(e.target) || navLinks.contains(e.target);
+                if (!isClickInside && navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                    menuToggle.classList.remove('active');
+                }
+            }
+        });
+
+        // Close mobile menu after clicking a link
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').style.display = 'none';
+                    document.querySelector('.menu-toggle').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

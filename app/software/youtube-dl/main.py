@@ -12,7 +12,7 @@ def _task(l, i):
     output = BytesIO()
 
     YouTube(l).streams.filter(
-        file_extension="mp4",
+        subtype="mp4",
         progressive=True
     )[i].stream_to_buffer(output)
 
@@ -56,7 +56,7 @@ def content():
         print(yt.title)
 
         streams = yt.streams.filter(
-            file_extension="mp4",
+            subtype="mp4",
             progressive=True
         )
 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Posts</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="main-nav">
+        <div class="logo">
+            <img src="static/your-logo.png" alt="Website Logo">
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html#intro">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="software.html">Software</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Blog Section -->
+        <section class="blog-section">
+            <h1>Blog</h1>
+            <ul class="blog-list">
+                <li class="blog-card">
+                    <h2>Introduction to Machine Learning in Healthcare</h2>
+                    <p>A beginner's guide to applying machine learning techniques in medical research, with practical examples and tools...</p>
+                    <button class="read-more-btn">Read More</button>
+                </li>
+                <li class="blog-card">
+                    <h2>Latest Advances in Biomarker Studies</h2>
+                    <p>An overview of recent breakthroughs in biomarker research and their implications for clinical chemistry...</p>
+                    <button class="read-more-btn">Read More</button>
+                </li>
+                <li class="blog-card">
+                    <h2>Building Your First Open-Source Project</h2>
+                    <p>Step-by-step instructions for creating and sharing your own open-source software, inspired by my own journey...</p>
+                    <button class="read-more-btn">Read More</button>
+                </li>
+                <!-- Add more blog posts as needed -->
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 My Research Website. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+            }
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const isClickInside = menuToggle.contains(e.target) || navLinks.contains(e.target);
+                if (!isClickInside && navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                    menuToggle.classList.remove('active');
+                }
+            }
+        });
+
+        // Close mobile menu after clicking a link
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    document.querySelector('.nav-links').style.display = 'none';
+                    document.querySelector('.menu-toggle').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

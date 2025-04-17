@@ -1,3 +1,4 @@
+import uvicorn
 from base64 import b64encode
 import theme
 import os
@@ -5,15 +6,20 @@ import importlib
 import json
 from utils.startup import register_dash_apps
 from dotenv import load_dotenv
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 from nicegui import app, ui
 
 app.add_static_files('static', 'app/static')
-
+fapp = FastAPI()
 
 # Home Page
 
-@ui.page('/')
+
+# @ui.page('/')
 def index_page() -> None:
     with theme.frame('home'):
         from pages import home
@@ -22,7 +28,7 @@ def index_page() -> None:
 # Sub Pages
 
 
-@ui.page('/{page}')
+# @ui.page('/{page}')
 def page(page: str) -> None:
     if os.path.exists(f'app/pages/{page}.py'):
         page_module = importlib.import_module(f'pages.{page}')
@@ -33,7 +39,7 @@ def page(page: str) -> None:
 # Blogs
 
 
-@ui.page('/blog/{page}')
+# @ui.page('/blog/{page}')
 def blog_page(page: str) -> None:
 
     if os.path.exists(f'app/blogs/{page}'):
@@ -52,7 +58,7 @@ def blog_page(page: str) -> None:
 # Software Pages
 
 
-@ui.page('/software/{page}')
+# @ui.page('/software/{page}')
 def software_page(page: str) -> None:
     if os.path.exists(f'app/software/{page}'):
         page_module = importlib.import_module(f'software.{page}.main')
@@ -74,7 +80,28 @@ for blog in os.listdir('app/blogs'):
 # Load env and run app
 load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
-ui.run(title='William van Doorn',
-       favicon=f'''data: image/png;base64,{b64encode(
+# tryout
+templates = Jinja2Templates(directory="app/templates")
+fapp.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+
+@app.get("/v2/{page}", response_class=HTMLResponse)
+async def return_static(request: Request, page: str):
+    print(page)
+    page = page.lower()
+    page = page if page != "" else "home"
+    if page in ["home", "blog", "software", "research"]:
+        return templates.TemplateResponse(
+            request=request, name=f"{page}.html",
+        )
+
+
+ui.run_with(app=fapp,
+            title='William van Doorn',
+            favicon=f'''data: image/png;base64,{b64encode(
            open('app/static/home_profile.png', 'rb').read()).decode('utf-8')}''',
-       storage_secret=os.getenv('STORAGE_SECRET') or 'storage_secret')
+            storage_secret=os.getenv('STORAGE_SECRET') or 'storage_secret')
+
+if __name__ == "__main__":
+    uvicorn.run("main:fapp", host="0.0.0.0", port=8080,
+                lifespan='on', use_colors=True, reload=True,)
