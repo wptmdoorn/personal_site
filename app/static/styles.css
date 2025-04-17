@@ -339,3 +339,7 @@ footer {
     margin-bottom: 15px;
     color: #555;
 }
+
+li:hover {
+    transform: translateY(-5px);
+}

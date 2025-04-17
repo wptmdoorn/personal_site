@@ -22,11 +22,11 @@
             <img src="static/your-logo.png" alt="Website Logo">
         </div>
         <ul class="nav-links">
-            <li><a href="index.html#intro">Home</a></li>
-            <li><a href="index.html#blog">Blog</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="index.html#software">Software</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="/home#intro">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/research">Research</a></li>
+            <li><a href="/software">Software</a></li>
+            <li><a href="/home#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -37,42 +37,14 @@
         <h1>Research</h1>
          <input type="text" id="searchInput" placeholder="Search publications..." style="margin-bottom: 20px; padding: 10px; width: 100%; max-width: 600px; border: 1px solid #e1e4e8; border-radius: 5px;">
         <ul class="research-list" id="researchList">
-        <!-- Existing publication list -->
-            <ul class="research-list">
-                <li>
-                    <h3>2024 - The laboratory parameters-derived CoLab score as an indicator of the host response in ICU COVID-19 patients decreases over time: a prospective cohort study</h3>
-                    <p>Tom Schoenmakers, Mathie P.G. Leers, Stefan H.M. Gorissen and Andrea Peeters</p>
-                </li>
-                <li>
-                    <h3>2024 - Machine learning for risk stratification in the emergency department (MARS-ED) study protocol for a randomized controlled pilot trial on the implementation of a prediction model based on machine learning technology predicting 31-day mortality in the emergency department</h3>
-                    <p>Paul M.E.L. van Dam, William van Doorn, Floor van Gils and Patricia M Stassen</p>
-                </li>
-                <li>
-                    <h3>2024 - Deep embedded clustering generalisability and adaptation for integrating mixed datatypes: two critical care cohorts</h3>
-                    <p>Jip de Kok, Frank van Rosmalen, Jacqueline Koeze and Bas C. T. van Bussel</p>
-                </li>
-                <li>
-                    <h3>2023 - The diurnal variation of Alzheimer’s disease plasma biomarkers: a 25h study with hourly sampling</h3>
-                    <p>Wagner S. Brum, William van Doorn, Eduardo R. Zimmer and Kaj Blennow</p>
-                </li>
-                <li>
-                    <h3>2023 - Explainable Machine Learning Models for Rapid Risk Stratification in the Emergency Department: A Multicenter Study</h3>
-                    <p>William van Doorn, Floris Heilmich, Paul M E L van Dam and Steven J R Meex</p>
-                </li>
-                <li>
-                    <h3>2023 - Head-to-head comparison of 19 prediction models for short-term outcome in medical patients in the emergency department: a retrospective study</h3>
-                    <p>Paul M. E. L. van Dam, Sien Lievens, Noortje Jelis and Patricia M Stassen</p>
-                </li>
-                <li>
-                    <h3>2023 - Evaluation of Innovative Laboratory Tests to Predict a Thrombotic Phenotype in a Family with Dysfibrinogenemia and a Novel FGG Mutation</h3>
-                    <p>Amaury Monard, Floor Moenen, Elisabetta Castoldi and Yvonne Henskens</p>
-                </li>
-                <li>
-                    <h3>2023 - Large-language models binnen de klinische chemie</h3>
-                    <p>William van Doorn and Steef Kurtsjens</p>
-                </li>
-                <!-- Add remaining 17 publications similarly based on your screenshot -->
-            </ul>
+
+        {% for pu in publications %}
+            <li class="blog-card">
+                <h3>{{ pu.title + " (" + pu.year_published + ")" }}</h3>
+                <p>{{ ', '.join(pu.authors[:-1]) + ", and " + pu.authors[-1] }}</p>  
+            </li>
+        {% endfor %}
+        </ul>
         </section>
     </main>
 

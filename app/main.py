@@ -11,54 +11,90 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from jinja2 import pass_context
+import jinja2
 from nicegui import app, ui
+from utils.researchgate import get_publication_list
+from utils.blog import get_blog_metadata
+from jinja_markdown2 import MarkdownExtension
 
 app.add_static_files('static', 'app/static')
 fapp = FastAPI()
 
-# @ui.page('/')
+# Load env and run app
+load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
+
+# Static site - FastAPI
+templates = Jinja2Templates(directory="app/templates")
+jinja_env = jinja2.Environment(
+    loader=jinja2.loaders.FileSystemLoader("app/templates"))
+jinja_env.add_extension(MarkdownExtension)
+# jinja_env.get_template
+fapp.mount("/static", StaticFiles(directory="app/static"), name="static")
+
+objects = {
+    "home": {
+        "software_example": json.loads(open('app/data/software.json').read())[0:2],
+        "blog_example": get_blog_metadata()[0:2],
+        "research_example": get_publication_list()[0:2],
+    },
+    "blog": {
+        "blog_list": get_blog_metadata()
+    },
+    "research": {
+        "publications": get_publication_list()
+    },
+    "software": {
+        "software_list": json.loads(open('app/data/software.json').read())
+    }
+}
 
 
-def index_page() -> None:
-    with theme.frame('home'):
-        from pages import home
-        home.content()
-
-# Sub Pages
-
-
-# @ui.page('/{page}')
-def page(page: str) -> None:
-    if os.path.exists(f'app/pages/{page}.py'):
-        page_module = importlib.import_module(f'pages.{page}')
-
-        with theme.frame(page):
-            page_module.content()
-
-# Blogs
+@app.get("/")
+async def return_home(request: Request):
+    print('hello')
+    return templates.TemplateResponse(
+        request=request, name="home.html",
+        context=objects["home"],
+    )
 
 
-# @ui.page('/blog/{page}')
-def blog_page(page: str) -> None:
+@app.get("/{page}", response_class=HTMLResponse)
+async def return_static(request: Request, page: str):
+    print(f'called!! p: {page}')
+    print(page)
+    page = page.lower()
+    page = page if page != "" else "home"
+    if page in ["home", "blog", "software", "research"]:
+        return templates.TemplateResponse(
+            request=request, name=f"{page}.html",
+            context=objects[page],
+        )
 
+# Dynamic site - NiceGUI
+
+# Register DASH apps
+register_dash_apps()
+
+# Register blogs
+for blog in os.listdir('app/blogs'):
+    app.add_static_files(f'/{blog}', f'app/blogs/{blog}')
+
+
+@app.get('/blog/{page}', response_class=HTMLResponse)
+def blog_page(request: Request, page: str):
     if os.path.exists(f'app/blogs/{page}'):
         with open(f'app/blogs/{page}/blog.md', encoding='utf-8') as f:
             data = f.read().split('---')
             metadata, content = json.loads(data[1]), "".join(data[2:])
 
-            with theme.frame(f'Blog - {metadata["short_title"]}'):
-                ui.label(f'This blog was first published on {metadata["pub_date"]} ' +
-                         f'and last updated on {metadata["last_mod"]}').style('font-size: 12px; font-style: italic; font-color: grey')
-                ui.markdown(content).classes('w-full')
-    else:
-        with theme.frame('Blog'):
-            ui.markdown('# Blog post not found')
+            print(content)
 
-# Software Pages
+            return jinja_env.get_template("blog_individual.html").render(
+                {"metadata": metadata, "content": content},
+            )
 
 
-# @ui.page('/software/{page}')
+@ui.page('/software/{page}')
 def software_page(page: str) -> None:
     if os.path.exists(f'app/software/{page}'):
         page_module = importlib.import_module(f'software.{page}.main')
@@ -69,45 +105,6 @@ def software_page(page: str) -> None:
         elif page_module.SOFTWARE_TYPE == 'NICEGUI':
             with theme.frame(page):
                 page_module.content()
-
-# Register DASH apps and blogs
-
-
-register_dash_apps()
-for blog in os.listdir('app/blogs'):
-    app.add_static_files(f'/{blog}', f'app/blogs/{blog}')
-
-# Load env and run app
-load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
-
-# tryout
-templates = Jinja2Templates(directory="app/templates")
-fapp.mount("/static", StaticFiles(directory="app/static"), name="static")
-
-
-@pass_context
-def https_for(context: dict, name: str, **path_params: Any) -> str:
-    request: Request = context['request']
-    http_url = request.url_for(name, **path_params)
-    print(f"URL: {http_url}")
-    print(str(http_url))
-    print(request)
-
-    return str(http_url).replace('http://', 'https://')
-
-
-templates.env.globals["https_for"] = https_for
-
-
-@app.get("/v2/{page}", response_class=HTMLResponse)
-async def return_static(request: Request, page: str):
-    print(page)
-    page = page.lower()
-    page = page if page != "" else "home"
-    if page in ["home", "blog", "software", "research"]:
-        return templates.TemplateResponse(
-            request=request, name=f"{page}.html",
-        )
 
 
 ui.run_with(app=fapp,

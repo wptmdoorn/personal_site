@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog Posts</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <title>{{ metadata['title'] }}</title>
+    <link rel="stylesheet" href="../static/styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="main-nav">
         <div class="logo">
-            <img src="static/your-logo.png" alt="Website Logo">
+            <img src="../static/your-logo.png" alt="Website Logo">
         </div>
         <div class="menu-toggle">
             <span></span>
@@ -18,7 +18,7 @@
             <span></span>
         </div>
         <ul class="nav-links">
-            <li><a href="/home#">Home</a></li>
+            <li><a href="/home#intro">Home</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/research">Research</a></li>
             <li><a href="/software">Software</a></li>
@@ -28,21 +28,9 @@
 
     <!-- Main Content -->
     <main>
-        <!-- Blog Section -->
-        <section class="blog-section">
-            <h1>Blog</h1>
-            <ul class="blog-list">
-                {% for b in blog_list %}
-                    <li class="blog-card">
-                        <h2>{{ b.title }}</h2>
-                        <p>{{ b.first_lines[0:147] + '...' }}</p>
-                        <button class="read-more-btn" onclick="window.location='/blog/{{b.file_name}}'">
-                            Read More
-                        </button>
-                    </li>
-                {% endfor %}
-            </ul>
-        </section>
+        {% markdown %}
+        {{ content }}
+        {% endmarkdown %}
     </main>
 
     <!-- Footer -->

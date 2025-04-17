@@ -2,6 +2,7 @@
 {
     "title": "How do we trust Machine Learning algorithms in Medicine?",
     "short_title": "Uncertainty Quantification in Healthcare",
+    "first_lines": "Recent advancements in machine learning (ML) have paved the way for deploying machine learning-based decision support systems in various sectors, including medicine. Many of these systems have...",
     "pub_date": "2019-09-01",
     "last_mod": "2024-02-05",
     "author": "William van Doorn"

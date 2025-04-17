@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Software Projects</title>
-    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -18,11 +18,11 @@
             <span></span>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html#intro">Home</a></li>
-            <li><a href="index.html#blog">Blog</a></li>
-            <li><a href="research.html">Research</a></li>
-            <li><a href="software.html">Software</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="/home#intro">Home</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/research">Research</a></li>
+            <li><a href="/software">Software</a></li>
+            <li><a href="/home#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -32,6 +32,21 @@
         <section class="software-section">
             <h1>Software</h1>
             <ul class="software-list">
+                {% for s in software_list %}
+                    <li class="software-card">
+                        <h3>{{ s.name }}</h3>
+                        <p>{{ s.description }}</p>
+                        <div class="button-group">
+                            {% if s['source'] != -1: %}
+                                <a href="{{ s.source }}" class="source-btn" target="_blank">Source Code</a>
+                            {% endif %}
+                            {% if s['demo'] != -1: %}
+                                <a href="{{ s.demo }}" class="demo-btn" target="_blank">Live Demo</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                {% endfor %}
+
                 <li class="software-card">
                     <h3>HealthML Toolkit</h3>
                     <p>A library for implementing machine learning models in healthcare applications, designed for ease of use and scalability...</p>

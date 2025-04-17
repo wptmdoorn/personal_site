@@ -2,6 +2,7 @@
 {
     "title": "Methcomp: the Python package for method comparison",
     "short_title": "methcomp",
+    "first_lines": "Laboratory medicine is amongst the fastest growing specialities in medicine, being crucial in the diagnosis, prevention and in monitoring of disease states for individual patients, as well as for the evaluation of treatment....",
     "pub_date": "2020-03-09",
     "last_mod": "2024-02-05",
     "author": "William van Doorn"

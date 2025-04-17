@@ -4,6 +4,84 @@
     "co_authors": [],
     "publications": [
         {
+            "title": "Racial disparities in continuous glucose monitoring-based 60-min glucose predictions among people with type 1 diabetes",
+            "date_published": "Dec 2024",
+            "authors": [
+                "Helene Bei Thomsen",
+                "Livie Yumeng Li",
+                "Anders A. Isaksen",
+                "Adam Hulman"
+            ],
+            "publication_type": "Preprint",
+            "description": "Non-Hispanic white (White) populations are overrepresented in medical studies. Potential healthcare disparities can happen when machine learning models, used in diabetes technologies, are trained on data from primarily White patients. We aimed to evaluate algorithmic fairness in glucose predictions. This study utilized continuous glucose monitoring...",
+            "publication_link": "https://www.researchgate.net/publication/387711737_Racial_disparities_in_continuous_glucose_monitoring-based_60-min_glucose_predictions_among_people_with_type_1_diabetes"
+        },
+        {
+            "title": "Unraveling Uncertainty: The Impact of Biological and Analytical Variation on the Prediction Uncertainty of Categorical Prediction Models",
+            "date_published": "Nov 2024",
+            "authors": [
+                "Remy J. H. Martens",
+                "William van Doorn",
+                "Mathie P G Leers",
+                "Floris Helmich"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nInterest in prediction models, including machine learning (ML) models, based on laboratory data has increased tremendously. Uncertainty in laboratory measurements and predictions based on such data are inherently intertwined. This study developed a framework for assessing the impact of biological and analytical variation on the predictio...",
+            "publication_link": "https://www.researchgate.net/publication/385557537_Unraveling_Uncertainty_The_Impact_of_Biological_and_Analytical_Variation_on_the_Prediction_Uncertainty_of_Categorical_Prediction_Models"
+        },
+        {
+            "title": "A comprehensive survey of artificial intelligence adoption in European laboratory medicine: current utilization and prospects",
+            "date_published": "Oct 2024",
+            "authors": [
+                "Janne Cadamuro",
+                "Anna Carobene",
+                "Federico Cabitza",
+                "Andrea Padoan"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nAs the healthcare sector evolves, Artificial Intelligence\u2019s (AI\u2019s) potential to enhance laboratory medicine is increasingly recognized. However, the adoption rates and attitudes towards AI across European laboratories have not been comprehensively analyzed. This study aims to fill this gap by surveying European laboratory professionals t...",
+            "publication_link": "https://www.researchgate.net/publication/385217674_A_comprehensive_survey_of_artificial_intelligence_adoption_in_European_laboratory_medicine_current_utilization_and_prospects"
+        },
+        {
+            "title": "Case Report: Laboratory detection of a thrombotic tendency in a family with hypodysfibrinogenemia and a novel FGG mutation",
+            "date_published": "Oct 2024",
+            "authors": [
+                "Amaury Monard",
+                "Elisabetta Castoldi",
+                "Ilaria De Simone",
+                "Yvonne Henskens"
+            ],
+            "publication_type": "Article",
+            "description": "Introduction\nHypodysfibrinogenemia is a rare congenital fibrinogen disorder (CFD) which may induce thrombotic and bleeding events. Therefore, patient management needs careful evaluation. Routine coagulation tests are inadequate to predict the clinical phenotype.\n\nClinical findings\nA 60-year-old woman with both bleeding and thrombotic complications...",
+            "publication_link": "https://www.researchgate.net/publication/385320234_Case_Report_Laboratory_detection_of_a_thrombotic_tendency_in_a_family_with_hypodysfibrinogenemia_and_a_novel_FGG_mutation"
+        },
+        {
+            "title": "Data flow in clinical laboratories: could metadata and peridata bridge the gap to new AI-based applications?",
+            "date_published": "Oct 2024",
+            "authors": [
+                "Andrea Padoan",
+                "Janne Cadamuro",
+                "Glynis Frans",
+                "Anna Carobene"
+            ],
+            "publication_type": "Article",
+            "description": "In the last decades, clinical laboratories have significantly advanced their technological capabilities, through the use of interconnected systems and advanced software. Laboratory Information Systems (LIS), introduced in the 1970s, have transformed into sophisticated information technology (IT) components that integrate with various digital tools,...",
+            "publication_link": "https://www.researchgate.net/publication/384692387_Data_flow_in_clinical_laboratories_could_metadata_and_peridata_bridge_the_gap_to_new_AI-based_applications"
+        },
+        {
+            "title": "Differences in Cardiac Troponin T Composition in Myocardial Infarction and End-Stage Renal Disease Patients: A Blood Tube Effect?",
+            "date_published": "May 2024",
+            "authors": [
+                "Wim Vroemen",
+                "Ellen Denessen",
+                "William van Doorn",
+                "Alma M A Mingels"
+            ],
+            "publication_type": "Article",
+            "description": "Background\nCardiac troponin T (cTnT) is key in diagnosing myocardial infarction (MI) but is also elevated in end-stage renal disease (ESRD) patients. Specific larger cTnT proteoforms were identified for the acute phase of MI, while in serum of ESRD patients solely small cTnT fragments were found. However, others allocated this to a pre-analytic eff...",
+            "publication_link": "https://www.researchgate.net/publication/381029310_Differences_in_Cardiac_Troponin_T_Composition_in_Myocardial_Infarction_and_End-Stage_Renal_Disease_Patients_A_Blood_Tube_Effect"
+        },
+        {
             "title": "The laboratory parameters-derived CoLab score as an indicator of the host response in ICU COVID-19 patients decreases over time: a prospective cohort study",
             "date_published": "Apr 2024",
             "authors": [
@@ -117,6 +195,19 @@
             "publication_type": "Preprint",
             "description": "We propose X-DEC, a novel deep clustering technique that can integrate mixed datatypes (in this study numerical and categorical variables). Deep Embedded Clustering (DEC) is a promising technique capable of managing extensive sets of variables and non-linear relationships. Nevertheless, DEC cannot adequately handle mixed datatypes. Therefore, we cr...",
             "publication_link": "https://www.researchgate.net/publication/373708563_Deep_embedded_clustering_generalisability_and_adaptation_for_mixed_datatypes_two_critical_care_cohorts"
+        },
+        {
+            "title": "PB2642: EVALUATION OF INNOVATIVE LABORATORY TESTS TO PREDICT A THROMBOTIC PHENOTYPE IN A FAMILY WITH DYSFIBRINOGENEMIA AND A NOVEL FGG MUTATION.",
+            "date_published": "Aug 2023",
+            "authors": [
+                "Amaury Monard",
+                "Fs.C.J.I. Heubel-Moenen",
+                "Elisabetta Castoldi",
+                "Yvonne Henskens"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/373026794_PB2642_EVALUATION_OF_INNOVATIVE_LABORATORY_TESTS_TO_PREDICT_A_THROMBOTIC_PHENOTYPE_IN_A_FAMILY_WITH_DYSFIBRINOGENEMIA_AND_A_NOVEL_FGG_MUTATION"
         },
         {
             "title": "Direct Comparison of the Circadian Rhythm of Cardiac Myosin-Binding Protein C (cMyC) and Cardiac Troponin",
@@ -349,7 +440,7 @@
                 "Steven J. R. Meex"
             ],
             "publication_type": "Article",
-            "description": "IntroductionPatients with sepsis who present to an emergency department (ED) have highly variable underlying disease severity, and can be categorized from low to high risk. Development of a risk stratification tool for these patients is important for appropriate triage and early treatment. The aim of this study was to develop machine learning model...",
+            "description": "Introduction\nPatients with sepsis who present to an emergency department (ED) have highly variable underlying disease severity, and can be categorized from low to high risk. Development of a risk stratification tool for these patients is important for appropriate triage and early treatment. The aim of this study was to develop machine learning mode...",
             "publication_link": "https://www.researchgate.net/publication/348611012_A_comparison_of_machine_learning_models_versus_clinical_evaluation_for_mortality_prediction_in_patients_with_sepsis"
         },
         {
