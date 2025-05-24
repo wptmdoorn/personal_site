@@ -9,9 +9,9 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="main-nav">
-        <div class="logo">
-            <img src="static/your-logo.png" alt="Website Logo">
-        </div>
+        <a href="/home"><div class="logo">
+            <img src="{{ url_for('static', path='/your-logo.png') }}" alt="Website Logo">
+        </div></a>
         <div class="menu-toggle">
             <span></span>
             <span></span>
@@ -47,31 +47,6 @@
                     </li>
                 {% endfor %}
 
-                <li class="software-card">
-                    <h3>HealthML Toolkit</h3>
-                    <p>A library for implementing machine learning models in healthcare applications, designed for ease of use and scalability...</p>
-                    <div class="button-group">
-                        <a href="https://github.com/yourusername/healthml" class="source-btn" target="_blank">Source Code</a>
-                        <a href="https://yourproject1-demo.com" class="demo-btn" target="_blank">Live Demo</a>
-                    </div>
-                </li>
-                <li class="software-card">
-                    <h3>Biomarker Analyzer</h3>
-                    <p>A tool for analyzing and visualizing biomarker data in clinical studies, with interactive features and export options...</p>
-                    <div class="button-group">
-                        <a href="https://github.com/yourusername/biomarker" class="source-btn" target="_blank">Source Code</a>
-                        <a href="https://yourproject2-demo.com" class="demo-btn" target="_blank">Live Demo</a>
-                    </div>
-                </li>
-                <li class="software-card">
-                    <h3>DataViz Helper</h3>
-                    <p>A utility for creating custom visualizations from clinical datasets, built with modern web technologies...</p>
-                    <div class="button-group">
-                        <a href="https://github.com/yourusername/dataviz" class="source-btn" target="_blank">Source Code</a>
-                        <a href="https://yourproject3-demo.com" class="demo-btn" target="_blank">Live Demo</a>
-                    </div>
-                </li>
-                <!-- Add more software projects as needed -->
             </ul>
         </section>
     </main>

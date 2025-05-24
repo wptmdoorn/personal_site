@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>wptmdoorn.name | home</title>
     <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="main-nav">
-        <div class="logo">
+        <a href="/home"><div class="logo">
             <img src="{{ url_for('static', path='/your-logo.png') }}" alt="Website Logo">
-        </div>
+        </div></a>
         <div class="menu-toggle">
             <span></span>
             <span></span>
@@ -35,11 +36,8 @@
                 <p>Hi, I’m William. I’m currently a resident in clinical chemistry at Maastricht University Medical Center. I also have a passion for building (digital) stuff.</p>
                 <p>This website is my personal corner on the web, where I share my writing, projects, tutorials, and whatever else inspires me. You can explore my blog or check out the projects page to see some of my open-source work.</p>
                 <p>The site is completely ad-free, with no affiliate links, tracking, or paywalls—just a space for me to express myself and share what I’ve learned. My goal is to inspire others to create their own digital spaces and explore their creativity.</p>
-                <p>Feel free to contact me by email at wptmdoorn at gmail.com!</p>
-                <div class="social-links">
-                    <a href="https://github.com/wptmdoorn" target="_blank">GitHub</a>
-                    <a href="https://linkedin.com/in/wptmdoorn" target="_blank">LinkedIn</a>
-                </div>
+                <p>Feel free to leave me a <a href="#contact">message.</a></p>
+
             </div>
             <div class="intro-image">
                 <img src="{{ url_for('static', path='/your-logo.png') }}" alt="William van Doorn">
@@ -49,8 +47,6 @@
         <!-- Blog Section with Grid Layout -->
         <section id="blog" class="blog-section">
             <h1>Blog</h1>
-            <p>Explore my thoughts on clinical chemistry, technology, and more through my blog posts. Here are a couple of highlights:</p>
-            <br/>
             <ul class="blog-list">
                 {% for b in blog_example %}
                 <li class="blog-card">
@@ -70,8 +66,6 @@
         <!-- Research Teaser Section -->
         <section id="research" class="research-section">
             <h1>Research</h1>
-            <p>My research focuses on advancing clinical chemistry and healthcare through innovative methods, including machine learning and biomarker studies. Below are some of my recent publications—check out the full list for more!</p>
-            <br>
             <ul class="research-list">
                 {% for pu in research_example %}
             <li class="blog-card">
@@ -88,7 +82,6 @@
         <!-- Software Section -->
         <section id="software" class="software-section">
             <h1>Software</h1>
-            <p>Check out some of my open-source projects that showcase my passion for building digital tools. Here are a couple of highlights:</p>
             <ul class="software-list">
                 {% for s in software_example %}
                     <li class="software-card">
@@ -110,16 +103,23 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
             <h1>Contact</h1>
-            <p>Feel free to reach out to me via email at <a href="mailto:wptmdoorn@gmail.com">wptmdoorn@gmail.com</a>.</p>
-            <p>Alternatively, you can connect with me on social media:</p>
-            <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+            <div class="contact-button-group">
+                <a href="mailto:wptmdoorn@gmail.com" class="view-details-btn" target="_blank">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://github.com/wptmdoorn" class="view-details-btn" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/wptmdoorn" class="view-details-btn" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
             </div>
-        </section>
+    </section>
+        
+        
     </main>
 
     <!-- Footer -->

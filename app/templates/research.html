@@ -18,9 +18,9 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="main-nav">
-        <div class="logo">
-            <img src="static/your-logo.png" alt="Website Logo">
-        </div>
+        <a href="/home"><div class="logo">
+            <img src="{{ url_for('static', path='/your-logo.png') }}" alt="Website Logo">
+        </div></a>
         <ul class="nav-links">
             <li><a href="/home#intro">Home</a></li>
             <li><a href="/blog">Blog</a></li>

@@ -144,7 +144,7 @@ main {
 }
 
 /* Buttons */
-.read-more-btn, .view-details-btn, .source-btn, .demo-btn {
+.read-more-btn, .source-btn, .demo-btn {
     background-color: #3498db;
     /* Bright blue for buttons */
     color: #fff;
@@ -158,10 +158,44 @@ main {
     transition: background-color 0.3s ease;
 }
 
-.read-more-btn:hover, .view-details-btn:hover, .source-btn:hover, .demo-btn:hover {
+.read-more-btn:hover, .source-btn:hover, .demo-btn:hover {
     background-color: #2980b9;
     /* Darker blue on hover */
 }
+
+.view-details-btn {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.view-details-btn::after {
+    content: "\f061";
+    /* Font Awesome arrow-right */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    transition: transform 0.3s ease;
+}
+
+.view-details-btn:hover {
+    background: linear-gradient(135deg, #2980b9, #1a252f);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.view-details-btn:hover::after {
+    transform: translateX(5px);
+}
+
 
 /* Research Section */
 .research-section {
@@ -258,6 +292,62 @@ main {
     margin-bottom: 20px;
     text-align: center;
 }
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.social-links a i {
+    margin-right: 6px;
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.contact-btn i {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.contact-btn:hover {
+    background-color: #0056b3;
+}
+
+.contact-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.contact-button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
 
 /* Footer */
 footer {
