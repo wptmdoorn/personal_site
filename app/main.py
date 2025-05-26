@@ -27,6 +27,10 @@ templates = Jinja2Templates(directory="app/templates")
 jinja_env = jinja2.Environment(
     loader=jinja2.loaders.FileSystemLoader("app/templates"))
 jinja_env.add_extension(MarkdownExtension)
+templates.env.add_extension(MarkdownExtension)
+
+# templates = jinja_env.get_template("app/templates/blog_individual.html")
+
 # jinja_env.get_template
 fapp.mount("/static", StaticFiles(directory="app/static"), name="static")
 
@@ -78,12 +82,16 @@ for blog in os.listdir('app/blogs'):
 
 @app.get('/blog/{page}', response_class=HTMLResponse)
 def blog_page(request: Request, page: str):
+    print(f"Requesting blog page: {page}")
     if os.path.exists(f'app/blogs/{page}'):
         with open(f'app/blogs/{page}/blog.md', encoding='utf-8') as f:
             data = f.read().split('---')
             metadata, content = json.loads(data[1]), "".join(data[2:])
-            return jinja_env.get_template("blog_individual.html").render(
-                {"metadata": metadata, "content": content},
+
+            return templates.TemplateResponse(
+                request=request,
+                name="blog_individual.html",
+                context={"metadata": metadata, "content": content}
             )
 
 

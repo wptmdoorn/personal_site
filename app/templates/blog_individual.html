@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ metadata['title'] }}</title>
     <link rel="stylesheet" href="../static/styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="William van Doorn's personal website, featuring research in clinical chemistry, blog posts, and open-source software projects.">
+    <meta name="keywords" content="clinical chemistry, machine learning, biomarker research, open-source software, blog">
+    <meta name="author" content="William van Doorn">
+    <meta property="og:title" content="William van Doorn">
+    <meta property="og:description" content="Explore my research, blog, and software projects in clinical chemistry and technology.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wptmdoorn.name">
+    <meta property="og:image" content="https://wptmdoorn.name/your-logo.png">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -29,7 +38,7 @@
     <!-- Main Content -->
     <main>
         {% markdown %}
-        {{ content }}
+        {{ content | safe }}
         {% endmarkdown %}
     </main>
 
