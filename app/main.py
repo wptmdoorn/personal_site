@@ -14,6 +14,7 @@ import jinja2
 from nicegui import app, ui
 from utils.obtain_research import get_publication_list
 from utils.blog import get_blog_metadata
+import utils.static_pages as static_pages
 from jinja_markdown2 import MarkdownExtension
 
 app.add_static_files('static', 'app/static')
@@ -60,21 +61,6 @@ def home_page(request: Request) -> None:
     )
 
 
-@app.get("/{page}", response_class=HTMLResponse)
-async def return_static(request: Request, page: str):
-    page = page.lower()
-    page = page if page != "" else "home"
-    if page in ["home", "blog", "software", "research"]:
-        return templates.TemplateResponse(
-            request=request, name=f"{page}.html",
-            context=objects[page],
-        )
-
-# Dynamic site - NiceGUI
-
-# Register DASH apps
-register_dash_apps()
-
 # Register blogs
 for blog in os.listdir('app/blogs'):
     app.add_static_files(f'/{blog}', f'app/blogs/{blog}')
@@ -108,10 +94,33 @@ def software_page(page: str) -> None:
                 page_module.content()
 
 
+@app.get("/{page:path}", response_class=HTMLResponse)
+async def return_static(request: Request, page: str):
+    page = page.lower()
+    page = page if page != "" else "home"
+
+    print(f'Requesting static page: {page}')
+
+    # check if simple page exists
+    if page in ["home", "blog", "software", "research"]:
+        return templates.TemplateResponse(
+            request=request, name=f"{page}.html",
+            context=objects[page],
+        )
+
+    # check if static path exists by obtaining all functions in static_pages.py
+    if hasattr(static_pages, page.replace('/', '_')):
+        static_page_function = getattr(static_pages, page.replace('/', '_'))
+        return static_page_function(request, templates)
+
+
+# Register DASH apps
+register_dash_apps()
+
 ui.run_with(app=fapp,
             title='William van Doorn',
             favicon=f'''data: image/png;base64,{b64encode(
-           open('app/static/home_profile.png', 'rb').read()).decode('utf-8')}''',
+                open('app/static/home_profile.png', 'rb').read()).decode('utf-8')}''',
             storage_secret=os.getenv('STORAGE_SECRET') or 'storage_secret')
 
 if __name__ == "__main__":
