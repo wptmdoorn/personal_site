@@ -40,8 +40,10 @@
 
         {% for pu in publications %}
             <li class="blog-card">
-                <h3>{{ pu.title + " (" + pu.year_published + ")" }}</h3>
-                <p>{{ ', '.join(pu.authors[:-1]) + ", and " + pu.authors[-1] }}</p>  
+                <a href="{{ pu.publication_link }}" target="_blank" style="text-decoration: none; color: inherit; display: block;">
+                    <h3>{{ pu.title + " (" + pu.year_published + ")" }}</h3>
+                    <p>{{ ', '.join(pu.authors[:-1]) + ", and " + pu.authors[-1] }}</p>
+                </a>
             </li>
         {% endfor %}
         </ul>

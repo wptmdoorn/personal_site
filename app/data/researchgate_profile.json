@@ -4,6 +4,32 @@
     "co_authors": [],
     "publications": [
         {
+            "title": "EFLM checklist for the assessment of AI/ML studies in laboratory medicine: enhancing general medical AI frameworks for laboratory-specific applications",
+            "date_published": "Sep 2025",
+            "authors": [
+                "Anna Carobene",
+                "Janne Cadamuro",
+                "Glynis Frans",
+                "Andrea Padoan"
+            ],
+            "publication_type": "Article",
+            "description": "The integration of artificial intelligence (AI) and machine learning (ML) into laboratory medicine shows promise for advancing diagnostic, prognostic, and decision-support tools; however, routine clinical implementation remains limited and heterogeneous. Laboratory data presents unique methodological and semantic complexities \u2013 method dependency, a...",
+            "publication_link": "https://www.researchgate.net/publication/395651648_EFLM_checklist_for_the_assessment_of_AIML_studies_in_laboratory_medicine_enhancing_general_medical_AI_frameworks_for_laboratory-specific_applications"
+        },
+        {
+            "title": "Racial disparities in continuous glucose monitoring-based 60-min glucose predictions among people with type 1 diabetes",
+            "date_published": "Jun 2025",
+            "authors": [
+                "Helene Bei Thomsen",
+                "Livie Yumeng Li",
+                "Anders Aasted Isaksen",
+                "Adam Hulman"
+            ],
+            "publication_type": "Article",
+            "description": "Non-Hispanic white (White) populations are overrepresented in medical studies. Potential healthcare disparities can happen when machine learning models, used in diabetes technologies, are trained on data from primarily White patients. We aimed to evaluate algorithmic fairness in glucose predictions. This study utilized continuous glucose monitoring...",
+            "publication_link": "https://www.researchgate.net/publication/393171567_Racial_disparities_in_continuous_glucose_monitoring-based_60-min_glucose_predictions_among_people_with_type_1_diabetes"
+        },
+        {
             "title": "Racial disparities in continuous glucose monitoring-based 60-min glucose predictions among people with type 1 diabetes",
             "date_published": "Dec 2024",
             "authors": [
@@ -182,6 +208,19 @@
             "publication_type": "Article",
             "description": null,
             "publication_link": "https://www.researchgate.net/publication/374717893_Large-language_models_binnen_de_klinische_chemie"
+        },
+        {
+            "title": "PB0214 Evaluation of Innovative Laboratory Tests to Predict a Thrombotic Phenotype in a Family with Dysfibrinogenemia and a Novel FGG Mutation",
+            "date_published": "Oct 2023",
+            "authors": [
+                "Amaury Monard",
+                "F. Heubel-Moenen",
+                "E. Castoldi",
+                "Yvonne Henskens"
+            ],
+            "publication_type": "Article",
+            "description": null,
+            "publication_link": "https://www.researchgate.net/publication/397514009_PB0214_Evaluation_of_Innovative_Laboratory_Tests_to_Predict_a_Thrombotic_Phenotype_in_a_Family_with_Dysfibrinogenemia_and_a_Novel_FGG_Mutation"
         },
         {
             "title": "Deep embedded clustering generalisability and adaptation for mixed datatypes: two critical care cohorts",
@@ -411,7 +450,7 @@
                 "William van Doorn",
                 "Yuri D. Foreman",
                 "Nicolaas Schaper",
-                "Martijn C. G. J. Brouwers"
+                "Martijn Brouwers"
             ],
             "publication_type": "Article",
             "description": "Background\nClosed-loop insulin delivery systems, which integrate continuous glucose monitoring (CGM) and algorithms that continuously guide insulin dosing, have been shown to improve glycaemic control. The ability to predict future glucose values can further optimize such devices. In this study, we used machine learning to train models in predictin...",

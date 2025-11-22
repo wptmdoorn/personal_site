@@ -1,3 +1,3 @@
 
-python app/utils/researchgate.py
+python app/utils/ingest_research.py
 @pause

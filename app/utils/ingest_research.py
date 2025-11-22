@@ -39,4 +39,3 @@ def get_profile(profile: str):
 
 if __name__ == "__main__":
     get_profile("William-Doorn")
-    print(list(get_publication_list()))
