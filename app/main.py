@@ -83,18 +83,19 @@ def blog_page(request: Request, page: str):
 
 @ui.page('/software/{page}')
 def software_page(page: str) -> None:
+    print(f"Requesting software page: {page}")
     if os.path.exists(f'app/software/{page}'):
         page_module = importlib.import_module(f'software.{page}.main')
 
         if page_module.SOFTWARE_TYPE == 'DASH':
-            ui.open(f'/software/dash/{page}')
+            ui.navigate.to(f'/software/dash/{page}')
 
         elif page_module.SOFTWARE_TYPE == 'NICEGUI':
             with theme.frame(page):
                 page_module.content()
 
 
-@app.get("/{page:path}", response_class=HTMLResponse)
+@app.get("/{page}", response_class=HTMLResponse)
 async def return_static(request: Request, page: str):
     page = page.lower()
     page = page if page != "" else "home"

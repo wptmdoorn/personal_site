@@ -1,26 +1,44 @@
 [
   {
     "name": "Traffic Analyzer",
-    "description": "Analyze your home - work commute using Google Maps API and Python",
+    "description": "Analyzes your home - work commute using Google Maps API and Python",
     "source": "https://github.com/wptmdoorn/traffic_analyzer",
-    "demo": -1
+    "category": "personal",
+    "demo": "http://wptmdoorn.name/software/dash/traffic_analyzer"
   },
   {
-    "name": "Clinical Chemistry - Quiz App",
+    "name": "Interactive quiz application for clinical chemistry",
     "description": "A quiz app for clinical chemistry students using R and the Shiny package",
     "source": "https://github.com/wptmdoorn/kc_quiz_app",
-    "demo": "https://wptmdoorn.shinyapps.io/kcquizapp"
+    "demo": "https://wptmdoorn.shinyapps.io/kcquizapp",
+    "category": "professional"
   },
   {
-    "name": "Traffic Analyzer",
-    "description": "Analyze your home - work commute using Google Maps API and Python",
-    "source": "https://github.com/wptmdoorn/traffic_analyzer",
-    "demo": -1
+    "name": "Clinical study interface (MARS-ED)",
+    "description": "A clinical study databse interface using R and the Shiny package. Includes data entry, data validation and machine learning prediction. This was part of the MARS-ED study (Nature Communications 2025).",
+    "source": "https://github.com/wptmdoorn/marsedstudy",
+    "demo": "https://www.nature.com/articles/s41467-025-66947-7",
+    "category": "professional"
   },
   {
-    "name": "Clinical Chemistry - Quiz App",
-    "description": "A quiz app for clinical chemistry students using R and the Shiny package",
-    "source": "https://github.com/wptmdoorn/kc_quiz_app",
-    "demo": "https://wptmdoorn.shinyapps.io/kcquizapp"
+    "name": "Biological Variation Database Downloader",
+    "description": "A Python application to download the EFLM Biological Variation Database",
+    "source": "https://github.com/wptmdoorn/eflm_bv_calculations",
+    "demo": "https://wptmdoorn.name/software/eflmbv",
+    "category": "professional"
+  },
+  {
+    "name": "Simple Youtube Downloader",
+    "description": "A Python application to download Youtube videos using pytube",
+    "source": "https://github.com/wptmdoorn/youtube_video_trimmer",
+    "demo": "https://wptmdoorn.name/software/youtube-dl",
+    "category": "personal"
+  },
+  {
+    "name": "Hypotheek Calculator",
+    "description": "A mortgage calculator web application using SVG (embedded using NicegUI)",
+    "source": "https://github.com/wptmdoorn/hypotheek_calculator",
+    "demo": "https://wptmdoorn.name/software/hypotheek",
+    "category": "personal"
   }
 ]

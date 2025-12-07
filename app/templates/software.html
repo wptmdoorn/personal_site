@@ -21,97 +21,138 @@
             <li><a href="/home#intro">Home</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/research">Research</a></li>
-            <li><a href="/software">Software</a></li>
+            <li><a class="active" href="/software">Software</a></li>
             <li><a href="/home#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Main Content -->
     <main>
-        <!-- Software Section -->
         <section class="software-section">
             <h1>Software</h1>
-            <ul class="software-list">
+
+            <!-- Filter Tabs -->
+            <div class="software-tabs">
+                <button class="tab-btn active" data-filter="all">All</button>
+                <button class="tab-btn" data-filter="professional">Professional</button>
+                <button class="tab-btn" data-filter="personal">Personal</button>
+            </div>
+
+            <!-- Software Cards -->
+            <ul class="software-list" id="softwareList">
                 {% for s in software_list %}
-                    <li class="software-card">
+                    <li class="software-card" data-category="{{ s.category }}">
                         <h3>{{ s.name }}</h3>
                         <p>{{ s.description }}</p>
                         <div class="button-group">
-                            {% if s['source'] != -1: %}
+                            {% if s['source'] != -1 %}
                                 <a href="{{ s.source }}" class="source-btn" target="_blank">Source Code</a>
                             {% endif %}
-                            {% if s['demo'] != -1: %}
+                            {% if s['demo'] != -1 %}
                                 <a href="{{ s.demo }}" class="demo-btn" target="_blank">Live Demo</a>
                             {% endif %}
                         </div>
                     </li>
                 {% endfor %}
-
             </ul>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 My Research Website. All rights reserved.</p>
+        <p>© 2025 wptmdoorn. All rights reserved.</p>
     </footer>
 
-    <!-- JavaScript for Mobile Menu -->
+    <!-- Mobile Menu -->
     <script>
-        // Mobile Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-            }
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
 
-        // Close menu when clicking outside on mobile
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
-                const isClickInside = menuToggle.contains(e.target) || navLinks.contains(e.target);
-                if (!isClickInside && navLinks.style.display === 'flex') {
+                const isInside = menuToggle.contains(e.target) || navLinks.contains(e.target);
+                if (!isInside && navLinks.style.display === 'flex') {
                     navLinks.style.display = 'none';
                     menuToggle.classList.remove('active');
                 }
             }
         });
 
-        // Close mobile menu after clicking a link
         document.querySelectorAll('.nav-links a').forEach(anchor => {
             anchor.addEventListener('click', () => {
                 if (window.innerWidth <= 768) {
-                    document.querySelector('.nav-links').style.display = 'none';
-                    document.querySelector('.menu-toggle').classList.remove('active');
+                    navLinks.style.display = 'none';
+                    menuToggle.classList.remove('active');
                 }
             });
         });
     </script>
+
+    <!-- Back to Top -->
     <a href="#" class="back-to-top">Back to Top</a>
 
     <script>
-        // Show/hide back-to-top button
         const backToTop = document.querySelector('.back-to-top');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTop.style.display = 'block';
-            } else {
-                backToTop.style.display = 'none';
-            }
+            backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
         });
-    
-        // Smooth scroll to top
         backToTop.addEventListener('click', (e) => {
             e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Filtering Logic
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const cards = document.querySelectorAll('.software-card');
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                tabButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                cards.forEach(card => {
+                    const category = card.dataset.category;
+                    if (filter === "all" || category === filter) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
             });
         });
     </script>
+
+    <!-- Inline style for tabs (minimal) -->
+    <style>
+        .software-tabs {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .software-tabs .tab-btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #f5f5f5;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .software-tabs .tab-btn:hover {
+            background: #e9e9e9;
+        }
+        .software-tabs .tab-btn.active {
+            background: #1a73e8;
+            color: white;
+            border-color: #1a73e8;
+        }
+    </style>
+
 </body>
 </html>
