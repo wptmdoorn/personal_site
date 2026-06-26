@@ -1,43 +1,51 @@
-import uvicorn
-from base64 import b64encode
-import theme
-import os
 import importlib
 import json
-from utils.startup import register_dash_apps
+import os
+import sys
+from base64 import b64encode
+from pathlib import Path
+
+import jinja2
+import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-import jinja2
-from nicegui import app, ui
-from utils.obtain_research import get_publication_list
-from utils.blog import get_blog_metadata
-import utils.static_pages as static_pages
 from jinja_markdown2 import MarkdownExtension
+from nicegui import app, ui
 
-app.add_static_files('static', 'app/static')
+APP_DIR = Path(__file__).resolve().parent
+if str(APP_DIR) not in sys.path:
+    sys.path.insert(0, str(APP_DIR))
+
+import theme
+from utils.blog import get_blog_metadata
+from utils.obtain_research import get_publication_list
+from utils.startup import fetch_labkompas, register_dash_apps
+import utils.static_pages as static_pages
+
+app.add_static_files('static', str(APP_DIR / 'static'))
 fapp = FastAPI()
 
 # Load env and run app
-load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
+load_dotenv(APP_DIR / '.env')
 
 # Static site - FastAPI
-templates = Jinja2Templates(directory="app/templates")
+templates = Jinja2Templates(directory=str(APP_DIR / 'templates'))
 jinja_env = jinja2.Environment(
-    loader=jinja2.loaders.FileSystemLoader("app/templates"))
+    loader=jinja2.loaders.FileSystemLoader(str(APP_DIR / 'templates')))
 jinja_env.add_extension(MarkdownExtension)
 templates.env.add_extension(MarkdownExtension)
 
 # templates = jinja_env.get_template("app/templates/blog_individual.html")
 
 # jinja_env.get_template
-fapp.mount("/static", StaticFiles(directory="app/static"), name="static")
+fapp.mount("/static", StaticFiles(directory=str(APP_DIR / 'static')), name="static")
 
 objects = {
     "home": {
-        "software_example": json.loads(open('app/data/software.json').read())[0:2],
+        "software_example": json.loads((APP_DIR / 'data' / 'software.json').read_text(encoding='utf-8'))[0:2],
         "blog_example": get_blog_metadata()[0:2],
         "research_example": get_publication_list()[0:2],
     },
@@ -48,7 +56,7 @@ objects = {
         "publications": get_publication_list()
     },
     "software": {
-        "software_list": json.loads(open('app/data/software.json').read())
+        "software_list": json.loads((APP_DIR / 'data' / 'software.json').read_text(encoding='utf-8'))
     }
 }
 
@@ -62,15 +70,15 @@ def home_page(request: Request) -> None:
 
 
 # Register blogs
-for blog in os.listdir('app/blogs'):
-    app.add_static_files(f'/{blog}', f'app/blogs/{blog}')
+for blog in os.listdir(APP_DIR / 'blogs'):
+    app.add_static_files(f'/{blog}', str(APP_DIR / 'blogs' / blog))
 
 
 @app.get('/blog/{page}', response_class=HTMLResponse)
 def blog_page(request: Request, page: str):
     print(f"Requesting blog page: {page}")
-    if os.path.exists(f'app/blogs/{page}'):
-        with open(f'app/blogs/{page}/blog.md', encoding='utf-8') as f:
+    if os.path.exists(APP_DIR / 'blogs' / page):
+        with open(APP_DIR / 'blogs' / page / 'blog.md', encoding='utf-8') as f:
             data = f.read().split('---')
             metadata, content = json.loads(data[1]), "".join(data[2:])
 
@@ -84,7 +92,7 @@ def blog_page(request: Request, page: str):
 @ui.page('/software/{page}')
 def software_page(page: str) -> None:
     print(f"Requesting software page: {page}")
-    if os.path.exists(f'app/software/{page}'):
+    if os.path.exists(APP_DIR / 'software' / page):
         page_module = importlib.import_module(f'software.{page}.main')
 
         if page_module.SOFTWARE_TYPE == 'DASH':
@@ -93,18 +101,6 @@ def software_page(page: str) -> None:
         elif page_module.SOFTWARE_TYPE == 'NICEGUI':
             with theme.frame(page):
                 page_module.content()
-
-
-@ui.page('/labkompas')
-def labkompas_page() -> None:
-    # Live-embedded from the separate nhg-labkompas repo via GitHub Pages,
-    # so this site never keeps a copy and always serves the latest version.
-    with theme.frame('labkompas'):
-        ui.html(
-            '<iframe src="https://wptmdoorn.github.io/nhg-labkompas/Labkompas.dc.html" '
-            'style="width:100%; height:85vh; border:0;" '
-            'title="NHG Labkompas"></iframe>'
-        ).classes('w-full')
 
 
 @app.get("/{page}", response_class=HTMLResponse)
@@ -126,6 +122,9 @@ async def return_static(request: Request, page: str):
         static_page_function = getattr(static_pages, page.replace('/', '_'))
         return static_page_function(request, templates)
 
+
+# Pull latest Labkompas front-end from its own repo into app/static/labkompas
+fetch_labkompas()
 
 # Register DASH apps
 register_dash_apps()

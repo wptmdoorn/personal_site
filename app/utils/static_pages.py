@@ -1,5 +1,7 @@
 from fastapi import Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, HTMLResponse
+from nicegui import ui
+
 
 
 # contains static pages functions
@@ -14,3 +16,14 @@ def tool_diagnostische_ai(request: Request, template):
         headers={
             "Content-Disposition": f'inline; filename="Diagnostische AI Funnel (v0.8)"'}
     )
+
+def labkompas(request: Request, template):
+    # Render the standalone Labkompas app as-is, with no site chrome. The file is
+    # downloaded into the static dir at startup by fetch_labkompas(). A <base> tag
+    # is injected so its relative ./support.js and ./data/labkompas.json keep
+    # resolving against the static dir even though we serve it at /labkompas.
+    with open("app/static/labkompas/Labkompas.dc.html", encoding="utf-8") as f:
+        html = f.read()
+    html = html.replace("<head>", '<head>\n<base href="/static/labkompas/">', 1)
+
+    return HTMLResponse(html)

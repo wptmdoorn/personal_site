@@ -136,3 +136,5 @@ cython_debug/
 
 .nicegui/
 output/
+# Labkompas front-end pulled at startup from the nhg-labkompas repo
+app/static/labkompas/

@@ -40,5 +40,12 @@
     "source": "https://github.com/wptmdoorn/hypotheek_calculator",
     "demo": "https://wptmdoorn.name/software/hypotheek",
     "category": "personal"
+  },
+  {
+    "name": "NHG Labkompas",
+    "description": "A web tool to search NHG/LESA laboratory diagnostic guidelines by test, with a React front-end and an automated weekly sync of the NHG guidelines.",
+    "source": "https://github.com/wptmdoorn/nhg-labkompas",
+    "demo": "https://wptmdoorn.name/labkompas",
+    "category": "professional"
   }
 ]
