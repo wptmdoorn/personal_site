@@ -95,6 +95,18 @@ def software_page(page: str) -> None:
                 page_module.content()
 
 
+@ui.page('/labkompas')
+def labkompas_page() -> None:
+    # Live-embedded from the separate nhg-labkompas repo via GitHub Pages,
+    # so this site never keeps a copy and always serves the latest version.
+    with theme.frame('labkompas'):
+        ui.html(
+            '<iframe src="https://wptmdoorn.github.io/nhg-labkompas/Labkompas.dc.html" '
+            'style="width:100%; height:85vh; border:0;" '
+            'title="NHG Labkompas"></iframe>'
+        ).classes('w-full')
+
+
 @app.get("/{page}", response_class=HTMLResponse)
 async def return_static(request: Request, page: str):
     page = page.lower()
